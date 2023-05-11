@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+
+    <div class="main">
+
+        <h1>Tic Tac Toe</h1>
+        <p>By Tazim Khan</p>
+
+        <button id="reset" type="button" onclick="reset()">Reset</button>
+
+        <div class="parent" id="parent">
+
+            <div id=0,0 onclick="mark(0,0)"></div>
+            <div id=0,1 onclick="mark(0,1)"></div>
+            <div id=0,2 onclick="mark(0,2)"></div>
+            <div id=1,0 onclick="mark(1,0)"></div>
+            <div id=1,1 onclick="mark(1,1)"></div>
+            <div id=1,2 onclick="mark(1,2)"></div>
+            <div id=2,0 onclick="mark(2,0)"></div>
+            <div id=2,1 onclick="mark(2,1)"></div>
+            <div id=2,2 onclick="mark(2,2)"></div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let reset_button = document.getElementById("reset");
+        let parent = document.getElementById("parent");
+        let winner = false;
+
+        let turn = 0; //player 1 with odd, player 2 with even
+        let grid = [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
+        ];
+
+        function reset(){
+            parent.style.pointerEvents = "auto";
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    grid[i][j] = 0;
+                }
+                turn = 0;
+            }
+
+            document.getElementById("0,0").innerHTML = "";
+            document.getElementById("0,1").innerHTML = "";
+            document.getElementById("0,2").innerHTML = "";
+            document.getElementById("1,0").innerHTML = "";
+            document.getElementById("1,1").innerHTML = "";
+            document.getElementById("1,2").innerHTML = "";
+            document.getElementById("2,0").innerHTML = "";
+            document.getElementById("2,1").innerHTML = "";
+            document.getElementById("2,2").innerHTML = "";
+
+            console.clear();
+            console.log(grid);
+
+        }
+
+
+        function mark(x,y){
+
+            let id = x + "," + y;
+
+            //even == player 1 (X)
+            if (turn%2 == 0){
+                if (grid[x][y] != 0) {
+                    console.log("Invalid move");
+                } else {
+                    document.getElementById(id).innerHTML = "X";
+                    grid[x][y] = "X";
+                    turn++;
+                }
+            } else {
+                if (grid[x][y] != 0) {
+                    console.log("Invalid move");
+                } else {
+                    document.getElementById(id).innerHTML = "O";
+                    grid[x][y] = "O";
+                    turn++;
+                }
+            }
+
+            if (checkX() == true){
+                setTimeout(function() { alert("Player 1 Wins!"); }, 100);
+                parent.style.pointerEvents = "none";
+                winneer = true;
+            } else if (checkO() == true) {
+                setTimeout(function() { alert("Player 2 Wins!"); }, 100);
+                parent.style.pointerEvents = "none";
+                winneer = true;
+            } else if (turn == 10){
+                setTimeout(function() { alert("Draw!"); }, 100);
+                parent.style.pointerEvents = "none";
+            }
+
+            console.clear();
+            console.log(grid);
+            console.log(turn);
+
+        }
+
+        function checkX(){
+            //check horiz
+            for (let i = 0; i < 3; i++) {
+                if (grid[i][0] == "X" && grid[i][1] == "X" && grid[i][2] == "X") {
+                    return true;
+                }
+            }
+
+            //check vert
+            for (let i = 0; i < 3; i++) {
+                if (grid[0][i] == "X" && grid[1][i] == "X" && grid[2][i] == "X") {
+                    return true;
+                }
+            }
+
+            //check diag
+            if ((grid[0][0] == "X" && grid[1][1] == "X" && grid[2][2] == "X") || (grid[0][2] == "X" && grid[1][1] == "X" && grid[2][0] == "X")) {
+                return true;
+            }
+            return false;
+        }
+
+        function checkO(){
+            //check horiz
+            for (let i = 0; i < 3; i++) {
+                if (grid[i][0] == "O" && grid[i][1] == "O" && grid[i][2] == "O") {
+                    return true;
+                }
+            }
+
+            //check vert
+            for (let i = 0; i < 3; i++) {
+                if (grid[0][i] == "O" && grid[1][i] == "O" && grid[2][i] == "O") {
+                    return true;
+                }
+            }
+
+            //check diag
+            if ((grid[0][0] == "O" && grid[1][1] == "O" && grid[2][2] == "O") || (grid[0][2] == "O" && grid[1][1] == "O" && grid[2][0] == "O")) {
+                return true;
+            }
+            return false;
+        }
+
+        
+
+
+    </script>
+    
+</body>
+</html>
