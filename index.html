@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+
+
+    <div class="main">
+
+        <h1>Tic Tac Toe</h1>
+        <p>By Tazim Khan</p>
+
+
+
+
+        <button id="reset" type="button" onclick="reset()">Reset</button>
+
+
+        <div class="parent" id="parent">
+
+            <div id=cell1 onclick="mark(1)"></div>
+            <div id=cell2 onclick="mark(2)"></div>
+            <div id=cell3 onclick="mark(3)"></div>
+            <div id=cell4 onclick="mark(4)"></div>
+            <div id=cell5 onclick="mark(5)"></div>
+            <div id=cell6 onclick="mark(6)"></div>
+            <div id=cell7 onclick="mark(7)"></div>
+            <div id=cell8 onclick="mark(8)"></div>
+            <div id=cell9 onclick="mark(9)"></div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let reset_button = document.getElementById("reset");
+        let parent = document.getElementById("parent");
+        let winner = false;
+
+        let turn = 1; //player 1 with odd, player 2 with even
+        let grid = [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
+
+        ];
+
+        function reset(){
+            parent.style.pointerEvents = "auto";
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    grid[i][j] = 0;
+                }
+                turn = 1;
+                
+            }
+
+            document.getElementById("cell1").innerHTML = "";
+
+            document.getElementById("cell2").innerHTML = "";
+
+            document.getElementById("cell3").innerHTML = "";
+
+            document.getElementById("cell4").innerHTML = "";
+
+            document.getElementById("cell5").innerHTML = "";
+
+            document.getElementById("cell6").innerHTML = "";
+
+            document.getElementById("cell7").innerHTML = "";
+
+            document.getElementById("cell8").innerHTML = "";
+
+            document.getElementById("cell9").innerHTML = "";
+
+            console.clear();
+            console.log(grid);
+            
+
+        }
+
+        function mark(cell){
+
+            if (turn%2 != 0){
+                switch (cell) {
+                    case 1:
+                        if (grid[0][0] != 0) {
+                            break;
+                        } else {
+                            document.getElementById("cell1").innerHTML = "X";
+                            grid[0][0] = "X";
+                            turn++;
+                            break;
+                        }
+                    case 2:
+                        if (grid[0][1] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell2").innerHTML = "X";
+                                grid[0][1] = "X";
+                                turn++;
+                                break;
+                            }
+                    case 3:
+                        if (grid[0][2] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell3").innerHTML = "X";
+                                grid[0][2] = "X";
+                                turn++;
+                                break;
+                            }
+                    case 4:
+                        if (grid[1][0] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell4").innerHTML = "X";
+                                grid[1][0] = "X";
+                                turn++;
+                                break;
+                            }
+                    case 5:
+                        if (grid[1][1] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell5").innerHTML = "X";
+                                grid[1][1] = "X";
+                                turn++;
+                                break;
+                            }
+                    case 6:
+                        if (grid[1][2] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell6").innerHTML = "X";
+                                grid[1][2] = "X";
+                                turn++;
+                                break;
+                            }
+                    case 7:
+                        if (grid[2][0] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell7").innerHTML = "X";
+                                grid[2][0] = "X";
+                                turn++;
+                                break;
+                            }
+                    case 8:
+                        if (grid[2][1] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell8").innerHTML = "X";
+                                grid[2][1] = "X";
+                                turn++;
+                                break;
+                            }
+                    case 9:
+                        if (grid[2][2] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell9").innerHTML = "X";
+                                grid[2][2] = "X";
+                                turn++;
+                                break;
+                            }
+                
+                    default:
+                        break;
+                }
+
+            } else {
+                switch (cell) {
+                    case 1:
+                        if (grid[0][0] != 0)  {
+                            break;
+                        } else {
+                            document.getElementById("cell1").innerHTML = "O";
+                            grid[0][0] = "O";
+                            turn++;
+                            break;
+                        }
+                    case 2:
+                        if (grid[0][1] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell2").innerHTML = "O";
+                                grid[0][1] = "O";
+                                turn++;
+                                break;
+                            }
+                    case 3:
+                        if (grid[0][2] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell3").innerHTML = "O";
+                                grid[0][2] = "O";
+                                turn++;
+                                break;
+                            }
+                    case 4:
+                        if (grid[1][0] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell4").innerHTML = "O";
+                                grid[1][0] = "O";
+                                turn++;
+                                break;
+                            }
+                    case 5:
+                        if (grid[1][1] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell5").innerHTML = "O";
+                                grid[1][1] = "O";
+                                turn++;
+                                break;
+                            }
+                    case 6:
+                        if (grid[1][2] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell6").innerHTML = "O";
+                                grid[1][2] = "O";
+                                turn++;
+                                break;
+                            }
+                    case 7:
+                        if (grid[2][0] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell7").innerHTML = "O";
+                                grid[2][0] = "O";
+                                turn++;
+                                break;
+                            }
+                    case 8:
+                        if (grid[2][1] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell8").innerHTML = "O";
+                                grid[2][1] = "O";
+                                turn++;
+                                break;
+                            }
+                    case 9:
+                        if (grid[2][2] != 0) {
+                                break;
+                            } else {
+                                document.getElementById("cell9").innerHTML = "O";
+                                grid[2][2] = "O";
+                                turn++;
+                                break;
+                            }
+                
+                    default:
+                        break;
+                }
+            }
+
+            if (checkX() == true){
+                setTimeout(function() { alert("Player 1 Wins!"); }, 100);
+                parent.style.pointerEvents = "none";
+                winneer = true;
+            } else if (checkO() == true) {
+                setTimeout(function() { alert("Player 2 Wins!"); }, 100);
+                parent.style.pointerEvents = "none";
+                winneer = true;
+            } else if (turn == 10){
+                setTimeout(function() { alert("Draw!"); }, 100);
+                parent.style.pointerEvents = "none";
+            }
+
+            console.clear();
+            console.log(grid);
+            console.log(turn);
+        }
+
+        function checkX(){
+            //check horiz
+            for (let i = 0; i < 3; i++) {
+                if (grid[i][0] == "X" && grid[i][1] == "X" && grid[i][2] == "X") {
+                    return true;
+                }
+            }
+
+            //check vert
+            for (let i = 0; i < 3; i++) {
+                if (grid[0][i] == "X" && grid[1][i] == "X" && grid[2][i] == "X") {
+                    return true;
+                }
+            }
+
+            //check diag
+            if ((grid[0][0] == "X" && grid[1][1] == "X" && grid[2][2] == "X") || (grid[0][2] == "X" && grid[1][1] == "X" && grid[2][0] == "X")) {
+                return true;
+            }
+            return false;
+        }
+
+        function checkO(){
+            //check horiz
+            for (let i = 0; i < 3; i++) {
+                if (grid[i][0] == "O" && grid[i][1] == "O" && grid[i][2] == "O") {
+                    return true;
+                }
+            }
+
+            //check vert
+            for (let i = 0; i < 3; i++) {
+                if (grid[0][i] == "O" && grid[1][i] == "O" && grid[2][i] == "O") {
+                    return true;
+                }
+            }
+
+            //check diag
+            if ((grid[0][0] == "O" && grid[1][1] == "O" && grid[2][2] == "O") || (grid[0][2] == "O" && grid[1][1] == "O" && grid[2][0] == "O")) {
+                return true;
+            }
+            return false;
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
