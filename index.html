@@ -9,17 +9,12 @@
 </head>
 <body>
 
-
     <div class="main">
 
         <h1>Tic Tac Toe</h1>
         <p>By Tazim Khan</p>
 
-
-
-
         <button id="reset" type="button" onclick="reset()">Reset</button>
-
 
         <div class="parent" id="parent">
 
@@ -48,7 +43,6 @@
             [0, 0, 0],
             [0, 0, 0],
             [0, 0, 0],
-
         ];
 
         function reset(){
@@ -58,7 +52,6 @@
                     grid[i][j] = 0;
                 }
                 turn = 0;
-                
             }
 
             document.getElementById("0,0").innerHTML = "";
@@ -73,7 +66,6 @@
 
             console.clear();
             console.log(grid);
-            
 
         }
 
