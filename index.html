@@ -23,15 +23,15 @@
 
         <div class="parent" id="parent">
 
-            <div id=cell1 onclick="mark(1)"></div>
-            <div id=cell2 onclick="mark(2)"></div>
-            <div id=cell3 onclick="mark(3)"></div>
-            <div id=cell4 onclick="mark(4)"></div>
-            <div id=cell5 onclick="mark(5)"></div>
-            <div id=cell6 onclick="mark(6)"></div>
-            <div id=cell7 onclick="mark(7)"></div>
-            <div id=cell8 onclick="mark(8)"></div>
-            <div id=cell9 onclick="mark(9)"></div>
+            <div id=0,0 onclick="mark(0,0)"></div>
+            <div id=0,1 onclick="mark(0,1)"></div>
+            <div id=0,2 onclick="mark(0,2)"></div>
+            <div id=1,0 onclick="mark(1,0)"></div>
+            <div id=1,1 onclick="mark(1,1)"></div>
+            <div id=1,2 onclick="mark(1,2)"></div>
+            <div id=2,0 onclick="mark(2,0)"></div>
+            <div id=2,1 onclick="mark(2,1)"></div>
+            <div id=2,2 onclick="mark(2,2)"></div>
 
         </div>
 
@@ -43,7 +43,7 @@
         let parent = document.getElementById("parent");
         let winner = false;
 
-        let turn = 1; //player 1 with odd, player 2 with even
+        let turn = 0; //player 1 with odd, player 2 with even
         let grid = [
             [0, 0, 0],
             [0, 0, 0],
@@ -57,27 +57,19 @@
                 for (let j = 0; j < 3; j++) {
                     grid[i][j] = 0;
                 }
-                turn = 1;
+                turn = 0;
                 
             }
 
-            document.getElementById("cell1").innerHTML = "";
-
-            document.getElementById("cell2").innerHTML = "";
-
-            document.getElementById("cell3").innerHTML = "";
-
-            document.getElementById("cell4").innerHTML = "";
-
-            document.getElementById("cell5").innerHTML = "";
-
-            document.getElementById("cell6").innerHTML = "";
-
-            document.getElementById("cell7").innerHTML = "";
-
-            document.getElementById("cell8").innerHTML = "";
-
-            document.getElementById("cell9").innerHTML = "";
+            document.getElementById("0,0").innerHTML = "";
+            document.getElementById("0,1").innerHTML = "";
+            document.getElementById("0,2").innerHTML = "";
+            document.getElementById("1,0").innerHTML = "";
+            document.getElementById("1,1").innerHTML = "";
+            document.getElementById("1,2").innerHTML = "";
+            document.getElementById("2,0").innerHTML = "";
+            document.getElementById("2,1").innerHTML = "";
+            document.getElementById("2,2").innerHTML = "";
 
             console.clear();
             console.log(grid);
@@ -85,182 +77,27 @@
 
         }
 
-        function mark(cell){
 
-            if (turn%2 != 0){
-                switch (cell) {
-                    case 1:
-                        if (grid[0][0] != 0) {
-                            break;
-                        } else {
-                            document.getElementById("cell1").innerHTML = "X";
-                            grid[0][0] = "X";
-                            turn++;
-                            break;
-                        }
-                    case 2:
-                        if (grid[0][1] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell2").innerHTML = "X";
-                                grid[0][1] = "X";
-                                turn++;
-                                break;
-                            }
-                    case 3:
-                        if (grid[0][2] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell3").innerHTML = "X";
-                                grid[0][2] = "X";
-                                turn++;
-                                break;
-                            }
-                    case 4:
-                        if (grid[1][0] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell4").innerHTML = "X";
-                                grid[1][0] = "X";
-                                turn++;
-                                break;
-                            }
-                    case 5:
-                        if (grid[1][1] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell5").innerHTML = "X";
-                                grid[1][1] = "X";
-                                turn++;
-                                break;
-                            }
-                    case 6:
-                        if (grid[1][2] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell6").innerHTML = "X";
-                                grid[1][2] = "X";
-                                turn++;
-                                break;
-                            }
-                    case 7:
-                        if (grid[2][0] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell7").innerHTML = "X";
-                                grid[2][0] = "X";
-                                turn++;
-                                break;
-                            }
-                    case 8:
-                        if (grid[2][1] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell8").innerHTML = "X";
-                                grid[2][1] = "X";
-                                turn++;
-                                break;
-                            }
-                    case 9:
-                        if (grid[2][2] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell9").innerHTML = "X";
-                                grid[2][2] = "X";
-                                turn++;
-                                break;
-                            }
-                
-                    default:
-                        break;
+        function mark(x,y){
+
+            let id = x + "," + y;
+
+            //even == player 1 (X)
+            if (turn%2 == 0){
+                if (grid[x][y] != 0) {
+                    console.log("Invalid move");
+                } else {
+                    document.getElementById(id).innerHTML = "X";
+                    grid[x][y] = "X";
+                    turn++;
                 }
-
             } else {
-                switch (cell) {
-                    case 1:
-                        if (grid[0][0] != 0)  {
-                            break;
-                        } else {
-                            document.getElementById("cell1").innerHTML = "O";
-                            grid[0][0] = "O";
-                            turn++;
-                            break;
-                        }
-                    case 2:
-                        if (grid[0][1] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell2").innerHTML = "O";
-                                grid[0][1] = "O";
-                                turn++;
-                                break;
-                            }
-                    case 3:
-                        if (grid[0][2] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell3").innerHTML = "O";
-                                grid[0][2] = "O";
-                                turn++;
-                                break;
-                            }
-                    case 4:
-                        if (grid[1][0] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell4").innerHTML = "O";
-                                grid[1][0] = "O";
-                                turn++;
-                                break;
-                            }
-                    case 5:
-                        if (grid[1][1] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell5").innerHTML = "O";
-                                grid[1][1] = "O";
-                                turn++;
-                                break;
-                            }
-                    case 6:
-                        if (grid[1][2] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell6").innerHTML = "O";
-                                grid[1][2] = "O";
-                                turn++;
-                                break;
-                            }
-                    case 7:
-                        if (grid[2][0] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell7").innerHTML = "O";
-                                grid[2][0] = "O";
-                                turn++;
-                                break;
-                            }
-                    case 8:
-                        if (grid[2][1] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell8").innerHTML = "O";
-                                grid[2][1] = "O";
-                                turn++;
-                                break;
-                            }
-                    case 9:
-                        if (grid[2][2] != 0) {
-                                break;
-                            } else {
-                                document.getElementById("cell9").innerHTML = "O";
-                                grid[2][2] = "O";
-                                turn++;
-                                break;
-                            }
-                
-                    default:
-                        break;
+                if (grid[x][y] != 0) {
+                    console.log("Invalid move");
+                } else {
+                    document.getElementById(id).innerHTML = "O";
+                    grid[x][y] = "O";
+                    turn++;
                 }
             }
 
@@ -280,6 +117,7 @@
             console.clear();
             console.log(grid);
             console.log(turn);
+
         }
 
         function checkX(){
@@ -326,6 +164,7 @@
             return false;
         }
 
+        
 
 
     </script>
