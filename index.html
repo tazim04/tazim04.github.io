@@ -24,7 +24,7 @@
             color: black;
 
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /*fr == fraction of total space*/
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /*fr == fraction of total space*/
             grid-template-rows: 60px 300px 100px 1fr 1fr;
 
             padding-top: 15px;
@@ -49,7 +49,7 @@
             transition-duration: 0.2s;
         }
 
-        .about, .about, .projects, .resume, .linkedin {
+        .about, .about, .projects, .resume, .linkedin, .art {
             cursor: pointer;
             transition-duration: 0.2s;
 
@@ -59,14 +59,16 @@
             font-size: 20px;
         }
 
+        
 
-        .name:hover, .about:hover, .projects:hover, .resume:hover, .linkedin:hover {
+
+        .name:hover, .about:hover, .projects:hover, .resume:hover, .linkedin:hover, .art:hover {
             background-color: #55a682;
             color: white;
         }
 
         .intro {
-            grid-column: 1 / 7;
+            grid-column: 1 / 8;
 
             display: flex;
             align-items: center;
@@ -79,8 +81,20 @@
         .bottomContainer {
             background-color: #3D9970;
 
-            grid-column: 1 / 7;
+            grid-column: 1 / 8;
             grid-row: 4 / 6;
+        }
+
+        img {
+            border-radius: 50%;
+            
+            width: 368px;
+            height: 430px;
+
+            display: flex;
+            align-items: center;
+            margin: auto;
+
         }
 
         .smallDescription {
@@ -90,10 +104,10 @@
             align-items: center;
             margin: auto;
 
-            grid-column: 1 / 7;;
-
-
+            grid-column: 1 / 8;
         }
+
+
 
 
 
@@ -111,13 +125,16 @@
         <div class="projects" onclick="location.href='projects.html'">Projects</div>
         <div class="resume">Resume</div>
         <div class="linkedin" onclick="window.open('https://www.linkedin.com/in/tazim-khan-434584254/','_newtab');" >LinkedIn</div>
+        <div class="art">Digital Art</div>
 
         <div class="intro">
             Hi, I'm Tazim, and welcome to my portfolio.
         </div>
         <div class="smallDescription"><p>I'm currently a student at the University of Ottawa, studying Software Engineering.</p></div>
     
-        <div class="bottomContainer"></div>
+        <div class="bottomContainer">
+            <img src="me.jpg" alt="Tazim Khan">
+        </div>
 
 
 
