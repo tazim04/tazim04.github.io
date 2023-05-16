@@ -4,13 +4,161 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tazim Khan - Projects</title>
+
+
+
+
+    <style>
+        body {
+            margin: 0;
+            
+            
+            min-height: 100%;
+            min-width: 100%;
+        }
+
+        .container {
+            height: 100vh;
+
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: black;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /*fr == fraction of total space*/
+            grid-template-rows: 60px 200px 500px;
+
+            padding-top: 15px;
+
+        }
+
+        .container div {
+            padding: 10px;
+            user-select: none;
+        }
+
+        .name {
+            grid-column-start: 1;
+            grid-column-end: 3;
+
+            display: flex;
+            align-items: center;
+
+            font-size: 20px;
+
+            cursor: pointer;
+            transition-duration: 0.2s;
+
+            /* border-bottom: 3px solid black; */
+        }
+
+        .about, .about, .projects, .resume, .linkedin, .art {
+            cursor: pointer;
+            transition-duration: 0.2s;
+
+            display: flex;
+            align-items: center;
+
+            font-size: 20px;
+
+            /* border-bottom: 3px solid black; */
+        }
+
+
+        
+
+
+        .name:hover, .about:hover, .projects:hover, .resume:hover, .linkedin:hover, .art:hover {
+            background-color: #55a682;
+            color: white;
+        }
+
+        .title{
+            grid-column: 1 / 8;
+            font-size: 40px;
+            text-align: center;
+
+            line-height: 180px;
+            background-color: #55a682;
+            color: white;
+        }
+
+        .list{
+            grid-column: 1 / 8;
+            grid-row-start: 3;
+            background-color: white;
+
+            font-size: 20px;
+        }
+
+        ul, li {
+            display: block;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            line-height: 70px;
+            text-align: center;
+            color: black;
+
+            cursor: pointer;
+            transition-duration: 100ms;
+        }
+
+        li:hover {
+            line-height: 250px;
+            font-size: 30px;
+            color: black;
+        }
+        li:active {
+            background-color: lightgrey;
+        }
+
+    </style>
+
+
+
+
+
+
+
+
+
 </head>
 <body>
-    <ol>
-        <li><a href="TicTacToe/TicTacToe.html">Tic Tac Toe</a></li>
 
 
-    </ol>
+    <div class="container">
+
+        <div class="name" onclick="location.href='../index.html'">Tazim Khan</div>
+        <div class="about" onclick="location.href='about.html'">About Me</div>
+        <div class="projects" onclick="location.href='projects.html'">Projects</div>
+        <div class="resume">Resume</div>
+        <div class="linkedin" onclick="window.open('https://www.linkedin.com/in/tazim-khan-434584254/','_newtab');" >LinkedIn</div>
+        <div class="art">Digital Art</div>
+
+        <div class="title">Projects</div>
+
+        <div class="list">
+            <ul>
+                <li onclick="location.href='TicTacToe/TicTacToe.html'">Tic Tac Toe</li>
+                <li>More Coming Soon</li>
+                <li>More Coming Soon</li>
+                <li>More Coming Soon</li>
+            </ul>
+        </div>
+
+        
+
+
+
+
+
+    </div>
+
+    
 </body>
 </html>
