@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+
+
+    <style>
+        body {
+            background-color: lightgrey;
+        }
+
+        .container {
+            height: 100vh;
+
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: black;
+        }
+
+        .title {
+            text-align: center;
+            position: relative;
+            top: 100px;
+
+            font-size: 90px;
+            color: #40536b;
+        }
+
+        .num {
+            font-size: 70px;
+            color: #55a359;
+
+            position: relative;
+            top: 150px;
+            text-align: center;
+        }
+
+        .buttons {
+            position: relative;
+            top: 200px;
+            text-align: center;
+        }
+        button {
+            font-size: 20px;
+            padding: 5px 10px 5px 10px;
+            border: 2px solid black;
+            border-radius: 50px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="title">Counter</div>
+
+        <div class="num" id="num">0</div>
+
+        <div class="buttons">
+            <button type="button" onclick="reset()">Reset</button>
+            <button type="button" onclick="decrease()">Decrease</button>
+            <button type="button" onclick="increase()">Increase</button>
+        </div>
+    </div>
+
+
+    <script>
+
+        let count = 0;
+
+        function increase() {
+            count++;
+            console.log(count + 1);
+            document.getElementById("num").innerHTML = count;
+        }
+        function decrease() {
+            count--;
+            console.log(count - 1);
+            document.getElementById("num").innerHTML = count;
+        }
+        function reset() {
+            count = 0;
+            console.log(count);
+            document.getElementById("num").innerHTML = 0;
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
