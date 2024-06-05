@@ -1,0 +1,74 @@
+.navbar{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar-brand{
+    color: rgb(11, 157, 160);
+    font-weight: bold;
+    transition: all 0.2s;
+}
+.navbar-brand:hover {
+    color: rgb(160, 145, 11);
+    font-weight: bold;
+    transform: scale(0.95);
+}
+.navbar-brand:active {
+    color: rgb(160, 145, 11);
+    font-weight: bold;
+    transform: scale(0.90);
+}
+
+
+.navbar .navbar-nav .nav-link { /* for nav-links */
+    color: rgb(11, 157, 160);
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+.navbar .navbar-nav .nav-link:hover { /* for nav-links */
+    color: rgb(160, 145, 11);
+    font-weight: 600;
+    transform: scale(1.2);
+}
+.navbar .navbar-nav .nav-link:active { /* for nav-links */
+    color: rgb(160, 145, 11);
+    font-weight: 600;
+    transform: scale(1);
+    
+}
+
+.bookAppointment {
+    color: white;
+    background-color: rgb(207, 189, 25);
+    font-weight: 600;
+    width: 300px;
+    height: 60px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+.bookAppointment:hover {
+    color: white;
+    border-color: rgb(207, 189, 25);
+    background-color: rgb(116, 104, 0);
+
+}
+.bookAppointment:active {
+    color: white !important;
+    border-color: rgb(207, 189, 25) !important;
+    background-color: rgb(116, 104, 0) !important;
+    transform: scale(0.95);
+}
+
+.slogal {
+    position: absolute;
+    top: 410px;
+    left: 200px;
+}
+
+.mainImage {
+    background-image: url('home_page_image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 1400px;
+    width: 100%;
+    filter: brightness(35%) blur(2px) saturate(130%);
+}
