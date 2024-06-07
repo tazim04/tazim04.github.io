@@ -12,9 +12,18 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+    <script> // on load
+      window.onload = function() { // for when the user clicks "services" from another page, it will automatically scroll to the services section
+        const urlParameters = new URLSearchParams(window.location.search);
+        const scrollTo = urlParameters.get('scrollTo');
+        if (scrollTo == 'services') {
+          document.getElementById('services').scrollIntoView();
+        }
+      }
+    </script>
 
-    <button onclick="topFunction()" class="scrollUp" id="scrollUp">&uarr; Top</button>
-    <script>
+    <button onclick="scrollToTop()" class="scrollUp" id="scrollUp">&uarr; Top</button>
+    <script> // javascript for scroll up button
       let scrollUp = document.getElementById("scrollUp"); // identify scroll up button
 
       window.onscroll = function() {scrollFunction()}; // set function for onScroll event
@@ -26,14 +35,14 @@
           scrollUp.style.display = "none";
         }
       }
-      function topFunction() {
+      function scrollToTop() {
         document.documentElement.scrollTop = 0; // scroll to top
       }
     </script>
 
     <nav class="navbar navbar-expand-lg bg-white">
         <div class="container-fluid">
-          <a class="navbar-brand fs-1 ms-3" href="index.html">TeeKay Dental</a> <!-- title -->
+          <a class="navbar-brand fs-1 ms-3" href="index.html" style="font-family: Georgia, serif;">TeeKay Dental</a> <!-- title -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -51,7 +60,7 @@
             </ul>
           </div>
         </div>
-        <button type="button" class="bookAppointment btn btn-lg float-end me-4">Book Appointment</button>
+        <a href="bookingPage.html"><button type="button" class="bookAppointment btn btn-lg float-end me-4">Book Appointment</button></a>
       </nav>
 
       <div>
@@ -86,99 +95,136 @@
 
 
       <div>
-        <h1 class="display-1 fw-bold text-black"
+        <h1 class="display-2 fw-bold text-black"
           style="
           position: relative;
           top: 400px;
           left: 7%;
           ">Feedback from<br>our patients!
         </h1>
-        <img src="assets/five_stars.jpg" alt="Five stars" style="position: relative; top: 450px; transform:scale(0.80) translateX(25%);">
+        <img src="assets/five_stars.jpg" alt="Five stars" style="position: relative; top: 380px; right: 5%; transform:scale(0.80);">
 
+        <div class="feedback card" style="
+          width: 20rem;
+          height: 10rem;
+          position: relative;
+          left: 50%;
+          background-color: #D2EEF2;
+          border: none;
+          border-radius: 10%;
+          ">
+          <div class="card-body" style="width: 90%; padding: 30px 0 0 20px;">
+            <p class="card-text">I love TeeKay Dental! They saved my life!<br><br>-Rynak</p>
+          </div>
+        </div>
 
-      </div>
+        <div class="feedback card" style="
+          width: 20rem;
+          height: 10rem;
+          position: relative;
+          left: 73%;
+          background-color: #e3d4f1;
+          border: none;
+          border-radius: 10%;
+          ">
+          <div class="card-body" style="width: 90%; padding: 30px 0 0 20px;">
+            <p class="card-text">I look forward to my appointment every month!<br><br>-Bob</p>
+          </div>
+        </div>
 
-
-
-      <div class="services">
-        <h1 id="services" class="display-1 fw-bold text-black d-flex justify-content-center"
-        style="
+        <div class="feedback card" style="
+        width: 20rem;
+        height: 10rem;
         position: relative;
-        top: 600px;
-        ">What services do we offer?
-      </h1>
-
-    
-
-
-      <div class="container-fluid d-flex justify-content-center" style="position: relative; top: 700px; width: 50%">
-        <div class="row">
-          <div class="col-md-5 col-lg-4 py-4 px-4">
-            <div class="card">
-              <img src="assets/services_images/cleaning.jpeg" class="card-img-top" alt="Cleaning">
-              <div class="card-body">
-                <h5 class="card-title">Cleaning</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn cardBookAppointment">Book Appointment</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 col-lg-4 py-4 px-4">
-            <div class="card">
-              <img src="assets/services_images/cleaning.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn cardBookAppointment">Book Appointment</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 col-lg-4 py-4 px-4">
-            <div class="card">
-              <img src="assets/services_images/cleaning.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn cardBookAppointment">Book Appointment</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 col-lg-4 py-4 px-4">
-            <div class="card">
-              <img src="assets/services_images/cleaning.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn cardBookAppointment">Book Appointment</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 col-lg-4 py-4 px-4">
-            <div class="card">
-              <img src="assets/services_images/cleaning.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn cardBookAppointment">Book Appointment</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 col-lg-4 py-4 px-4">
-            <div class="card">
-              <img src="assets/services_images/cleaning.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn cardBookAppointment">Book Appointment</a>
-              </div>
-            </div>
-          </div>
+        left: 50%;
+        background-color: #d4f1ee;
+        border: none;
+        border-radius: 10%;
+        ">
+        <div class="card-body" style="width: 90%; padding: 30px 0 0 20px;">
+          <p class="card-text">My life would be incomplete without TeeKay Dental!<br><br>-Jessica</p>
         </div>
-  
-          
-        </div>
+      </div>
 
       </div>
+
+
+      <div style="
+      position: relative;
+      top: 300px;
+      ">
+        <div class="services">
+          <h1 id="services" class="display-2 fw-bold text-black d-flex justify-content-center">What services do we offer?
+        </h1>
+
+        <div class="container-fluid d-flex justify-content-center" style="padding-top: 40px; width: 70%">
+          <div class="row">
+            <div class="col-md-5 col-lg-4 col-sm-4 py-4 px-4">
+              <div class="card">
+                <img src="assets/services_images/cleaning.jpeg" class="card-img-top" alt="Cleaning">
+                <div class="card-body">
+                  <h5 class="card-title">Cleaning</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn cardBookAppointment">Book Appointment</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 col-lg-4 col-sm-4 py-4 px-4">
+              <div class="card">
+                <img src="assets/services_images/cleaning.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn cardBookAppointment">Book Appointment</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 col-lg-4 col-sm-4 py-4 px-4">
+              <div class="card">
+                <img src="assets/services_images/cleaning.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn cardBookAppointment">Book Appointment</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 col-lg-4 col-sm-4 py-4 px-4">
+              <div class="card">
+                <img src="assets/services_images/cleaning.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn cardBookAppointment">Book Appointment</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 col-lg-4 col-sm-4 py-4 px-4">
+              <div class="card">
+                <img src="assets/services_images/cleaning.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn cardBookAppointment">Book Appointment</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 col-lg-4 col-sm-4 py-4 px-4">
+              <div class="card">
+                <img src="assets/services_images/cleaning.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn cardBookAppointment">Book Appointment</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            
+        </div>
+      </div>
+    
 
 
 
