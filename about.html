@@ -50,7 +50,7 @@
             </ul>
           </div>
         </div>
-        <button type="button" class="bookAppointment btn btn-lg float-end me-4">Book Appointment</button>
+        <a href="bookingPage.html"><button type="button" class="bookAppointment btn btn-lg float-end me-4">Book Appointment</button></a>
       </nav>
       <script>
         function goToServices() {
@@ -61,16 +61,16 @@
 
     <div class="card mb-3 mt-5" style="max-width: 100%; border: none; background: rgb(245, 245, 245);">
         <div class="row g-0">
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="card-body ms-5 mt-4">
-                <h2 class="card-title mb-4">About Us</h2>
-                <p class="card-text mb-5">
+                <h1 class="card-title mb-4">About Us</h1>
+                <p class="card-text mb-5" style="font-size: 20px;">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt porta tortor, et blandit velit pharetra tristique. Praesent ac purus purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus ipsum nisl, aliquam sit amet erat at, malesuada tempor tortor. Morbi id rhoncus enim, at ultricies tellus. Nam mollis turpis id ipsum commodo dignissim. Cras in magna eu augue ultricies blandit. Nulla facilisi. Sed cursus dictum tellus quis consequat. Nunc a nibh sed neque semper elementum. Nulla efficitur, nunc in auctor tincidunt, tellus orci faucibus purus, in tristique risus orci nec mauris.
                 </p>
               </div>
           </div>
           <div class="col-md-8">
-            <img src="assets/dental_team.jpeg" class="img-fluid rounded-start w-75 float-end me-5" style="position:relative; top:6.5%" alt="team">
+            <img src="assets/dental_team.jpeg" class="img-fluid rounded-start w-75 float-end me-5" alt="team">
           </div>
         </div>
       </div>
@@ -83,22 +83,70 @@
       position: relative;
       top: 100px;
       ">
-        <div">
+      <h1 class="display-3 fw-bold text-black d-flex justify-content-center mb-5">Meet our experts!</h1>
+
+      <div class="container d-flex justify-content-center">
+        <div>
+          <div class="card mb-3" style="max-width: 1000px">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="assets/expert.jpeg" class="expertPic card-img-top" alt="Cleaning">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h4 class="card-title">Dr John Doe</h4>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 1000px">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="assets/expert.jpeg" class="expertPic card-img-top" alt="Cleaning">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h4 class="card-title">Dr Tam On</h4>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 1000px">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="assets/expert.jpeg" class="expertPic card-img-top" alt="Cleaning">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h4 class="card-title">Dr Tazim Khan</h4>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- <div class="container" style="width: 70%; margin:auto;">
+        <div>
           <h1 class="display-3 fw-bold text-black d-flex justify-content-center">Meet our experts!
         </h1>
-
-      <div class="container-fluid d-flex justify-content-center" style="padding-top: 40px; width: 70%">
-        <div class="row">
-          <div class="col-md-5 col-lg-4 col-sm-4 py-4 px-4">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-3 py-4 px-4">
             <div class="card">
-              <img src="assets/expert.jpeg" class="card-img-top" alt="Cleaning">
+              <img src="assets/expert.jpeg" class="expertPic card-img-top" alt="Cleaning">
               <div class="card-body">
                 <h5 class="card-title">Dr John Doe</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
             </div>
           </div>
-          <div class="col-md-5 col-lg-4 col-sm-4 py-4 px-4">
+          <div class="col-md-3 py-4 px-4">
             <div class="card">
               <img src="assets/expert.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
@@ -107,34 +155,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-5 col-lg-4 col-sm-4 py-4 px-4">
-            <div class="card">
-              <img src="assets/expert.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 col-lg-4 col-sm-4 py-4 px-4">
-            <div class="card">
-              <img src="assets/expert.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 col-lg-4 col-sm-4 py-4 px-4">
-            <div class="card">
-              <img src="assets/expert.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 col-lg-4 col-sm-4 py-4 px-4">
+          <div class="col-md-3 py-4 px-4">
             <div class="card">
               <img src="assets/expert.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
@@ -144,6 +165,35 @@
             </div>
           </div>
         </div>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-3 py-4 px-4">
+            <div class="card">
+              <img src="assets/expert.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 py-4 px-4">
+            <div class="card">
+              <img src="assets/expert.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 py-4 px-4">
+            <div class="card">
+              <img src="assets/expert.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+          </div>
+        </div> -->
     
 </body>
 </html>

@@ -32,7 +32,7 @@
             </ul>
           </div>
         </div>
-        <button type="button" class="bookAppointment btn btn-lg float-end me-4">Book Appointment</button>
+        <a href="bookingPage.html"><button type="button" class="bookAppointment btn btn-lg float-end me-4">Book Appointment</button></a>
       </nav>
       <script>
         function goToServices() {
@@ -43,8 +43,49 @@
 
 
 
-      <h1 class="display-4 d-flex justify-content-center">Book Appointing</h1>
+      <h1 class="display-4 d-flex justify-content-center pb-5">Book Appointment</h1>
 
+
+
+      <div style="margin: auto; width: 50%;" id="patientInfo">
+        <h3>Patient Info</h3>
+        <label for="PatientName" class="form-label fw-bold">Patient Name</label>
+        <div class="input-group mb-3" id="PatientName">
+          <input type="text" class="form-control" placeholder="First name" aria-label="First name" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" aria-describedby="basic-addon1">
+        </div>
+
+        <label for="patientEmail" class="form-label fw-bold">Patient Email</label>
+        <div class="input-group mb-3" id="patientEmail">
+          <input type="text" class="form-control" placeholder="Patient Email" aria-label="Patient Email" aria-describedby="basic-addon2">
+          <span class="input-group-text" id="basic-addon2">@example.com</span>
+        </div>
+
+        <div class="row d-flex justify-content-center pt-4">
+          <div class="col-auto">
+            <h6>Are you a new patient?</h6>
+          </div>
+          <div class="col-auto">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="yes">
+              <label class="form-check-label" for="yes">
+                Yes
+              </label>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="no" checked>
+              <label class="form-check-label" for="no">
+                No
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
 
       
 
