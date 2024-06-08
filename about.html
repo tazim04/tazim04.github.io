@@ -42,10 +42,10 @@
               <a class="nav-link active fs-5" aria-current="page" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active fs-5" onClick="document.getElementById('services').scrollIntoView();">Services</a>
+              <a class="nav-link active fs-5" style="cursor: pointer;" onClick="goToServices();">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active fs-5" href="contact.html">Contact</a>
+              <a class="nav-link active fs-5" style="cursor: pointer;" onclick="document.getElementById('footer').scrollIntoView();">Contact</a>
             </li>
           </ul>
         </div>
@@ -124,6 +124,59 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- footer -->
+      <div style="background-color: #4CA6B3; position:relative; top:500px;" id="footer">
+        <footer class="row py-5 my-5" style="width:80%; margin:auto;">
+          <div class="col mb-3">
+              <h5 class="text-white">Contact Us</h5>
+              <div style="border-bottom: 1px solid white; width: 110%; margin-bottom: 1rem;"></div>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2 text-white">123 Dental Road, Ottawa, ON</li>
+                <li class="nav-item mb-2 text-white">111-111-1111</li>
+
+              </ul>
+          </div>
+        
+          <div class="col mb-3">
+            <h5 class="text-white">Our Hours</h5>
+            <div style="border-bottom: 1px solid white; width: 110%; margin-bottom: 1rem;"></div>
+            <ul class="nav flex-column">
+              <div class="row text-white" style="width: 70%;;">
+                <div class="col">
+                  <li class="nav-item mb-2">Monday</li>
+                  <li class="nav-item mb-2">Tuesday</li>
+                  <li class="nav-item mb-2">Wednsday</li>
+                  <li class="nav-item mb-2">Thursday</li>
+                  <li class="nav-item mb-2">Friday</li>
+                  <li class="nav-item mb-2">Saturday</li>
+                  <li class="nav-item mb-2">Sunday</li>
+                </div>
+                <div class="col">
+                  <li class="nav-item mb-2">8am-4pm</li>
+                  <li class="nav-item mb-2">8am-4pm</li>
+                  <li class="nav-item mb-2">8am-4pm</li>
+                  <li class="nav-item mb-2">8am-4pm</li>
+                  <li class="nav-item mb-2">8am-4pm</li>
+                  <li class="nav-item mb-2">Closed</li>
+                  <li class="nav-item mb-2">Closed</li>
+                </div>
+              </div>
+
+            </ul>
+          </div>
+        
+          <div class="col mb-3">
+            <h5 class="text-white">Quick Links</h5>
+            <div style="border-bottom: 1px solid white; width: 100%; margin-bottom: 1rem;"></div>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2 "><a href="index.html" class="nav-link p-0 text-white">Home</a></li>
+              <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0 text-white">About</a></li>
+              <li class="nav-item mb-2"><a class="nav-link p-0 text-white" style="cursor: pointer;" onClick="document.getElementById('services').scrollIntoView();">Services</a></li>
+            </ul>
+          </div>
+        </footer>
       </div>
     
 </body>
