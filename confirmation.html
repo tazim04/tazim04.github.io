@@ -21,10 +21,10 @@
             let email = urlParameters.get("email");
             let dateOfBirth = urlParameters.get("dateOfBirth");
             let newPatient = urlParameters.get("newPatient");
-            let underEighteen = urlParameters.get("underEighteen");
             let service = urlParameters.get("service");
             let appointmentDate = urlParameters.get("appointmentDate");
             let appointmentTime = urlParameters.get("appointmentTime");
+            let expert = urlParameters.get("expert");
             let frequency = urlParameters.get("frequency");
             let bookingNum = urlParameters.get("bookingNum");
 
@@ -36,10 +36,10 @@
             document.getElementById("email").innerHTML = email;
             document.getElementById("dateOfBirth").innerHTML = dateOfBirth;
             document.getElementById("newPatient").innerHTML = newPatient;
-            document.getElementById("underEighteen").innerHTML = underEighteen;
             document.getElementById("service").innerHTML = service;
             document.getElementById("appointmentDate").innerHTML = appointmentDate;
             document.getElementById("appointmentTime").innerHTML = appointmentTime;
+            document.getElementById("expert").innerHTML = expert;
             document.getElementById("frequency").innerHTML = frequency;
             document.getElementById("bookingNum").innerHTML = bookingNum;
 
@@ -58,7 +58,7 @@
                 <a class="nav-link active fs-5" aria-current="page" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active fs-5" onClick="goToServices()">Services</a>
+                <a class="nav-link active fs-5" style="cursor: pointer;" onClick="goToServices()">Services</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link active fs-5" style="cursor: pointer;" onclick="document.getElementById('footer').scrollIntoView();">Contact</a>
@@ -100,10 +100,6 @@
             <div class="d-flex justify-content-center">
                 <p class="fw-bolder">Are you, or the person you're booking for, a new patient?:&nbsp</p><p id="newPatient"></p>
             </div>
-            <div class="d-flex justify-content-center">
-                <p class="fw-bolder">Are you, or the person you're booking for, under 18?:&nbsp</p><p id="underEighteen"></p>
-            </div>
-
         </div>
 
 
@@ -113,6 +109,9 @@
 
             <div class="d-flex justify-content-center">
                 <p class="fw-bolder">Service:&nbsp</p><p id="service"></p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="fw-bolder">Expert:&nbsp</p><p id="expert"></p>
             </div>
             <div class="d-flex justify-content-center">
                 <p class="fw-bolder">Date:&nbsp</p><p id="appointmentDate"></p>

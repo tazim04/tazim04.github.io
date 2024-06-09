@@ -9,12 +9,12 @@ form.addEventListener("submit", (e) => { // when user submits
     let email = document.getElementById("email").value;
     let dateOfBirth = document.getElementById("dateOfBirth").value;
     let newPatient = document.querySelector('input[name="newPatient"]:checked').value;
-    let underEighteen = document.querySelector('input[name="underEighteen"]:checked').value;
 
     // get appointmenet info
-    let service = document.getElementById("service").value;
+    let service = document.getElementById("services").value;
     let appointmentDate = document.getElementById("appointmentDate").value;
     let appointmentTime = document.getElementById("appointmentTime").value;
+    let expert = document.getElementById("expert").value;
     let frequency = document.getElementById("frequency").value;
 
     let bookingNum = Math.floor((Math.random() * 1000000) + 1000000); // generate random large number
@@ -37,10 +37,10 @@ form.addEventListener("submit", (e) => { // when user submits
         email: email,
         dateOfBirth: dateOfBirth,
         newPatient: newPatient,
-        underEighteen: underEighteen,
         service: service,
         appointmentDate: appointmentDate,
         appointmentTime: appointmentTime,
+        expert: expert,
         frequency: frequency,
         bookingNum: bookingNum
     })
