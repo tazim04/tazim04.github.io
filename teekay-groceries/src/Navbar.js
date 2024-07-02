@@ -1,10 +1,15 @@
 import "./Navbar.css";
+import profile from "./assets/profile.png";
+import cart from "./assets/shopping-cart-icon.png";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [cartNumber, setcartNumber] = useState(0);
+
   return (
-    <div>
-      <nav class="navbar navbar-expand-lg bg-white">
-        <div class="container-fluid">
+    <div style={{ padding: "0px" }}>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid" style={{ padding: "0px" }}>
           <a
             class="navbar-brand"
             href="index.html"
@@ -12,11 +17,20 @@ const Navbar = () => {
               fontFamily: "verdana",
               color: "#358D2D",
               fontSize: "35px",
+              position: "relative",
+              top: "-11.5px",
+              left: "15px",
             }}
           >
             TeeKay Groceries
           </a>
-          <div class="ms-3 me-auto w-50">
+          <div
+            class="ms-4 me-auto w-50"
+            style={{
+              position: "relative",
+              top: "-11.5px",
+            }}
+          >
             <form class="d-flex " role="search">
               <input
                 class="form-control me-2"
@@ -29,58 +43,133 @@ const Navbar = () => {
               </button>
             </form>
           </div>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
 
-          <div className="userCorner">
-            <div className="signIn">
-              <button class="btn">Sign In</button>
+          <div
+            class="userCorner container-fluid"
+            style={{
+              background: "#75DA6D",
+              height: "80px",
+              width: "250px",
+              position: "relative",
+              top: "-11.5px",
+              margin: "0",
+            }}
+          >
+            <div
+              class="vertical-center"
+              style={{
+                display: "inline-flex",
+              }}
+            >
+              <img
+                src={profile}
+                style={{ width: "50px", height: "auto" }}
+                alt="profile
+            "
+              />
+              <div
+                className="signIn"
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                <button class="btn">Sign In</button>
+              </div>
+
+              <div className="cart">
+                <img
+                  src={cart}
+                  alt="cart"
+                  style={{
+                    width: "40px",
+                    marginLeft: "25px",
+                    paddingTop: "6px",
+                  }}
+                />
+              </div>
+              <div className="cartNumber">{cartNumber}</div>
             </div>
           </div>
         </div>
       </nav>
 
-      <nav class="navbar navbar-expand-lg bg-white ">
+      <nav
+        class="navbar navbar-expand-lg bg-white"
+        style={{
+          position: "relative",
+          top: "-10px",
+          margin: "0",
+        }}
+      >
         <div
           class="container-fluid d-flex justify-content-center text-center"
           id="navbarNav"
         >
           <ul class="navbar-nav row gx-5" style={{ width: "100%" }}>
-            <li class="nav-item col-md-2" style={{ marginRight: "20px" }}>
-              <a class="nav-link active fs-5" aria-current="page" href="">
-                Aisles
-              </a>
+            <li
+              class="nav-item col-md-2"
+              style={{ marginRight: "20px", marginLeft: "20px" }}
+            >
+              <div class="dropdown">
+                <a
+                  class="btn dropdown-toggle aisles"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  href="#"
+                  role="button"
+                  style={{ fontSize: "15px", fontWeight: "600" }}
+                >
+                  Aisles
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Action
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Another action
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Something else here
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
-            <li class="nav-item col-md-2" style={{ marginRight: "20px" }}>
-              <a class="nav-link active fs-5" style={{ cursor: "pointer" }}>
+
+            <li
+              class="nav-item col-md-2"
+              style={{ marginRight: "20px", marginLeft: "20px" }}
+            >
+              <a class="nav-link active " style={{ cursor: "pointer" }}>
                 Flyers
               </a>
             </li>
-            <li class="nav-item col-md-2" style={{ marginRight: "20px" }}>
+            <li
+              class="nav-item col-md-2"
+              style={{ marginRight: "20px", marginLeft: "20px" }}
+            >
               <a
-                class="nav-link active fs-5"
+                class="nav-link active "
                 style={{ cursor: "pointer" }}
                 onClick="document.getElementById('services').scrollIntoView();"
               >
                 Recipes
               </a>
             </li>
-            <li class="nav-item col-md-2" style={{ marginRight: "20px" }}>
-              <a class="nav-link active fs-5" style={{ cursor: "pointer" }}>
+            <li
+              class="nav-item col-md-2"
+              style={{ marginRight: "20px", marginLeft: "20px" }}
+            >
+              <a class="nav-link active " style={{ cursor: "pointer" }}>
                 About Us
               </a>
             </li>
             <li class="nav-item col-md-2">
-              <a class="nav-link active fs-5" style={{ cursor: "pointer" }}>
+              <a class="nav-link active " style={{ cursor: "pointer" }}>
                 Contact
               </a>
             </li>
