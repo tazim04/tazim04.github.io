@@ -1,0 +1,31 @@
+.navbar{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar-brand{
+    transition: all 0.2s;
+}
+.navbar-brand:hover {
+    transform: scale(0.95);
+}
+.navbar-brand:active {
+    transform: scale(0.90);
+}
+
+
+.navbar .navbar-nav .nav-link { /* for nav-links */
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+.navbar .navbar-nav .nav-link:hover { /* for nav-links */
+    color: rgb(59, 185, 21);
+    font-weight: 600;
+    transform: scale(1.2);
+}
+.navbar .navbar-nav .nav-link:active { /* for nav-links */
+    color: rgb(160, 145, 11);
+    font-weight: 600;
+    transform: scale(1);
+    
+}
