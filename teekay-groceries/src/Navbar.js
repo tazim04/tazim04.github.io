@@ -25,10 +25,11 @@ const Navbar = () => {
             TeeKay Groceries
           </a>
           <div
-            class="ms-4 me-auto w-75"
+            class="ps-5 me-auto pe-5"
             style={{
               position: "relative",
               top: "-11.5px",
+              width: "75%",
             }}
           >
             <form class="d-flex " role="search">
@@ -79,9 +80,10 @@ const Navbar = () => {
                   src={cart}
                   alt="cart"
                   style={{
-                    width: "40px",
+                    width: "50px",
                     marginLeft: "25px",
                     paddingTop: "6px",
+                    paddingRight: "5px",
                   }}
                 />
               </div>

@@ -4,7 +4,11 @@ import "./Home.css";
 const Home = () => {
   return (
     <div className="homepage">
-      <div id="carousel" class="carousel slide mx-auto" style={{ width: 2000 }}>
+      <div
+        id="carousel"
+        class="carousel slide mx-auto"
+        style={{ width: "90%" }}
+      >
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="parent d-flex justify-content-center">
