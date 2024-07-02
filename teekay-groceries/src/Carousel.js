@@ -1,4 +1,4 @@
-import homeApple from "./homeApple.png";
+import homeApple from "./assets/homeApple.png";
 
 const Carousel = () => {
   return (
