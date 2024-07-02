@@ -25,7 +25,7 @@ const Navbar = () => {
             TeeKay Groceries
           </a>
           <div
-            class="ms-4 me-auto w-50"
+            class="ms-4 me-auto w-75"
             style={{
               position: "relative",
               top: "-11.5px",
@@ -85,7 +85,12 @@ const Navbar = () => {
                   }}
                 />
               </div>
-              <div className="cartNumber">{cartNumber}</div>
+              <div
+                className="cartNumber"
+                style={{ paddingLeft: "5px", fontWeight: "bold" }}
+              >
+                {cartNumber}
+              </div>
             </div>
           </div>
         </div>
