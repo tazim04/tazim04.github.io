@@ -50,10 +50,9 @@ const Navbar = () => {
             style={{
               background: "#75DA6D",
               height: "80px",
-              width: "250px",
+              width: "290px",
               position: "relative",
               top: "-11.5px",
-              margin: "0",
             }}
           >
             <div
@@ -64,13 +63,13 @@ const Navbar = () => {
             >
               <img
                 src={profile}
-                style={{ width: "50px", height: "auto" }}
+                style={{ width: "50px", height: "auto", margin: "0" }}
                 alt="profile
             "
               />
               <div
                 className="signIn"
-                style={{ display: "flex", alignItems: "center" }}
+                style={{ display: "flex", alignItems: "center", margin: "0" }}
               >
                 <button class="btn">Sign In</button>
               </div>
@@ -83,13 +82,13 @@ const Navbar = () => {
                     width: "50px",
                     marginLeft: "25px",
                     paddingTop: "6px",
-                    paddingRight: "5px",
+                    paddingRight: "10px",
                   }}
                 />
               </div>
               <div
                 className="cartNumber"
-                style={{ paddingLeft: "5px", fontWeight: "bold" }}
+                style={{ paddingRight: "10px", fontWeight: "bold" }}
               >
                 {cartNumber}
               </div>
