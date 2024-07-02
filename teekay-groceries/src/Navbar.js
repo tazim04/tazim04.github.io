@@ -1,4 +1,4 @@
-import "./Navbar.css";
+import "./styles/Navbar.css";
 import profile from "./assets/profile.png";
 import cart from "./assets/shopping-cart-icon.png";
 import React, { useState } from "react";
@@ -7,7 +7,7 @@ const Navbar = () => {
   const [cartNumber, setcartNumber] = useState(0);
 
   return (
-    <div style={{ padding: "0px" }}>
+    <div style={{ padding: "0px", zIndex: 1000 }}>
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid" style={{ padding: "0px" }}>
           <a
@@ -106,7 +106,7 @@ const Navbar = () => {
         }}
       >
         <div
-          class="container-fluid d-flex justify-content-center text-center"
+          class="container-fluid d-flex justify-content-center text-center sticky-top"
           id="navbarNav"
         >
           <ul class="navbar-nav row gx-5" style={{ width: "100%" }}>
@@ -126,7 +126,7 @@ const Navbar = () => {
                 >
                   Aisles
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" style={{ zIndex: 1000 }}>
                   <li>
                     <a class="dropdown-item" href="#">
                       Action
