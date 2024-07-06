@@ -1,7 +1,11 @@
 import apple from "./assets/apple.png";
 import add_to_cart from "./assets/add_to_cart.png";
 
-const ProductCard = () => {
+const ProductCard = ({ setcartNumber }) => {
+  const addToCart = () => {
+    setcartNumber((prev) => prev + 1);
+  };
+
   return (
     <div className="product-card">
       <div class="card" style={{ width: "85%" }}>
@@ -40,6 +44,7 @@ const ProductCard = () => {
 
           <div
             class="btn addToCart"
+            onClick={addToCart}
             style={{
               background: "darkgrey",
               width: "50px",

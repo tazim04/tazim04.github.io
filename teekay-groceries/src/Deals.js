@@ -1,7 +1,7 @@
 import "./styles/Deals.css";
 import ProductCard from "./ProductCard";
 
-const Deals = () => {
+const Deals = ({ setcartNumber }) => {
   return (
     <div class="deals">
       <div class="container" style={{ position: "relative", top: 200 }}>
@@ -11,13 +11,13 @@ const Deals = () => {
           </h1>
           <div class="row d-flex justify-content-center">
             <div class="col-md-3 py-4 px-4">
-              <ProductCard />
+              <ProductCard setcartNumber={setcartNumber} />
             </div>
             <div class="col-md-3 py-4 px-4">
-              <ProductCard />
+              <ProductCard setcartNumber={setcartNumber} />
             </div>
             <div class="col-md-3 py-4 px-4">
-              <ProductCard />
+              <ProductCard setcartNumber={setcartNumber} />
             </div>
           </div>
         </div>

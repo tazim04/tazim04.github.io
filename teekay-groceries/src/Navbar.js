@@ -1,11 +1,10 @@
 import "./styles/Navbar.css";
 import profile from "./assets/profile.png";
 import cart from "./assets/shopping-cart-icon.png";
-import React, { useState } from "react";
+import Cart from "./Cart";
 
-const Navbar = () => {
-  const [cartNumber, setcartNumber] = useState(0);
-
+const Navbar = ({ cartNumber, setcartNumber }) => {
+  const [show, setShow] = useState(false);
   return (
     <div style={{ padding: "0px", zIndex: 1000 }}>
       <nav class="navbar navbar-expand-lg">
@@ -50,7 +49,7 @@ const Navbar = () => {
             style={{
               background: "#75DA6D",
               height: "80px",
-              width: "290px",
+              width: "295px",
               position: "relative",
               top: "-11.5px",
             }}

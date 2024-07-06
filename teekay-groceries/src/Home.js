@@ -1,11 +1,11 @@
 import Carousel from "./Carousel";
 import Deals from "./Deals";
 
-const Home = () => {
+const Home = ({ cartNumber, setcartNumber }) => {
   return (
     <div className="homepage">
       <Carousel />
-      <Deals />
+      <Deals setcartNumber={setcartNumber} />
     </div>
   );
 };
