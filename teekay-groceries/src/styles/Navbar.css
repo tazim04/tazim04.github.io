@@ -49,3 +49,10 @@
   display: block;
   margin-top: 0;
 }
+
+.cartIcon {
+  transition: all 0.2s;
+}
+.cartIcon:hover {
+  filter: invert(100%);
+}

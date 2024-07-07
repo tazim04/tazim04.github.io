@@ -1,7 +1,8 @@
 import "./styles/Deals.css";
 import ProductCard from "./ProductCard";
+import groceryItems from "./groceryItems";
 
-const Deals = ({ setcartNumber }) => {
+const Deals = ({ setcartNumber, setCart }) => {
   return (
     <div class="deals">
       <div class="container" style={{ position: "relative", top: 200 }}>
@@ -10,15 +11,15 @@ const Deals = ({ setcartNumber }) => {
             This weeks deals!
           </h1>
           <div class="row d-flex justify-content-center">
-            <div class="col-md-3 py-4 px-4">
-              <ProductCard setcartNumber={setcartNumber} />
-            </div>
-            <div class="col-md-3 py-4 px-4">
-              <ProductCard setcartNumber={setcartNumber} />
-            </div>
-            <div class="col-md-3 py-4 px-4">
-              <ProductCard setcartNumber={setcartNumber} />
-            </div>
+            {groceryItems.map((product) => (
+              <div key={product.id} class="col-md-3 py-4 px-4">
+                <ProductCard
+                  setcartNumber={setcartNumber}
+                  product={product}
+                  setCart={setCart}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -1,10 +1,13 @@
 import "./styles/Navbar.css";
 import profile from "./assets/profile.png";
 import cart from "./assets/shopping-cart-icon.png";
-import Cart from "./Cart";
+import React, { useState } from "react";
 
-const Navbar = ({ cartNumber, setcartNumber }) => {
-  const [show, setShow] = useState(false);
+const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
+  const handleCartClick = () => {
+    console.log("Cart clicked! show: " + show);
+    setShow(!show); // toggle the cart
+  };
   return (
     <div style={{ padding: "0px", zIndex: 1000 }}>
       <nav class="navbar navbar-expand-lg">
@@ -74,15 +77,18 @@ const Navbar = ({ cartNumber, setcartNumber }) => {
               </div>
 
               <div className="cart">
-                <img
+                <input
+                  type="image"
                   src={cart}
-                  alt="cart"
+                  name="saveForm"
+                  class="btTxt cartIcon"
                   style={{
                     width: "50px",
                     marginLeft: "25px",
                     paddingTop: "6px",
                     paddingRight: "10px",
                   }}
+                  onClick={handleCartClick}
                 />
               </div>
               <div
