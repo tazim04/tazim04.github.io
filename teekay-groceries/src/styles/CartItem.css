@@ -1,2 +1,12 @@
-.cart {
+.changeQuantity {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.changeQuantity:hover {
+  transform: scale(1.2);
+}
+
+.changeQuantity:active {
+  transform: scale(1);
 }

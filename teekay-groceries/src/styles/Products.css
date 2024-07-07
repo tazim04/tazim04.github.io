@@ -1,6 +1,6 @@
-.addToCart:hover {
+.add-To-Cart:hover {
   filter: brightness(0.8);
 }
-.addToCart:active {
+.add-To-Cart:active {
   filter: brightness(0.6);
 }

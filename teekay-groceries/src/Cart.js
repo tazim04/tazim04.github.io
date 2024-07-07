@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import "./styles/Cart.css";
 import CartItem from "./CartItem";
 
-const Cart = ({ show, setShow, cart }) => {
+const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
   const [modalDisplay, setModalDisplay] = useState("none");
 
   useEffect(() => {
     if (show) {
       setModalDisplay("block"); // show modal
+      console.log(cart);
     } else {
       setModalDisplay("none");
     }
@@ -19,7 +20,7 @@ const Cart = ({ show, setShow, cart }) => {
 
   return (
     <div id="myModal" class="modal" style={{ display: modalDisplay }}>
-      <div class="modal-content" style={{ width: "50%" }}>
+      <div class="modal-content" style={{ width: "80%" }}>
         <div class="close" onClick={handleCloseModal}>
           &times;
         </div>
@@ -29,9 +30,14 @@ const Cart = ({ show, setShow, cart }) => {
             cart.map((item) => (
               <div key={item.id} class="col-md-3 py-4 px-4">
                 <CartItem
+                  id={item.id}
                   name={item.name}
-                  price={item.price}
+                  price={item.price * item.quantity}
                   image={item.image}
+                  quantity={item.quantity}
+                  cart={cart}
+                  setCart={setCart}
+                  setCartNumber={setCartNumber}
                 />
               </div>
             ))

@@ -1,12 +1,13 @@
 import Carousel from "./Carousel";
-import Deals from "./Deals";
+import Products from "./Products";
 import groceryItems from "./groceryItems";
 
-const Home = ({ cartNumber, setcartNumber, setCart }) => {
+const Home = ({ cartNumber, setcartNumber, cart, setCart }) => {
   return (
-    <div className="homepage">
+    <div class="homepage">
       <Carousel />
-      <Deals setcartNumber={setcartNumber} setCart={setCart} />
+
+      <Products setcartNumber={setcartNumber} cart={cart} setCart={setCart} />
     </div>
   );
 };

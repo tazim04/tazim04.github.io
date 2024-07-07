@@ -1,4 +1,6 @@
 import homeApple from "./assets/homeApple.png";
+import flyerCarousel from "./assets/flyer_carousel.webp";
+import "./styles/Carousel.css";
 
 const Carousel = () => {
   return (
@@ -9,18 +11,42 @@ const Carousel = () => {
     >
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="parent d-flex justify-content-center">
-            <img src={homeApple} class="d-block w-100" alt="..." />
+          <div class="parent" style={{ background: "orange" }}>
+            <img
+              src={homeApple}
+              class="d-block"
+              alt="best prices"
+              style={{ width: "780px" }}
+            />
           </div>
         </div>
         <div class="carousel-item">
-          <div class="parent d-flex justify-content-center">
-            <img src={homeApple} class="d-block w-100" alt="..." />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="parent d-flex justify-content-center">
-            <img src={homeApple} class="d-block w-100" alt="..." />
+          <div
+            class="parent"
+            style={{
+              background: "orange",
+              display: "flex",
+              height: "500px",
+            }}
+          >
+            <h2
+              style={{
+                padding: "100px 0 0 100px",
+                fontFamily: "sans-serif",
+                fontWeight: "bold",
+              }}
+            >
+              Check out our flyer!
+            </h2>
+            <img
+              src={flyerCarousel}
+              class="d-block"
+              alt="flyers"
+              style={{
+                position: "relative",
+                right: "-10%",
+              }}
+            />
           </div>
         </div>
       </div>
@@ -29,6 +55,7 @@ const Carousel = () => {
         type="button"
         data-bs-target="#carousel"
         data-bs-slide="prev"
+        style={{ position: "absolute", left: "-50px" }}
       >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -38,6 +65,7 @@ const Carousel = () => {
         type="button"
         data-bs-target="#carousel"
         data-bs-slide="next"
+        style={{ position: "absolute", right: "-50px" }}
       >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>

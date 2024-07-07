@@ -1,14 +1,14 @@
-import "./styles/Deals.css";
+import "./styles/Products.css";
 import ProductCard from "./ProductCard";
 import groceryItems from "./groceryItems";
 
-const Deals = ({ setcartNumber, setCart }) => {
+const Products = ({ setcartNumber, cart, setCart }) => {
   return (
-    <div class="deals">
-      <div class="container" style={{ position: "relative", top: 200 }}>
+    <div class="Products">
+      <div class="container" style={{ position: "relative", top: 100 }}>
         <div class="services">
           <h1 class="display-2 fw-bold text-black d-flex justify-content-center mb-5">
-            This weeks deals!
+            See our products!
           </h1>
           <div class="row d-flex justify-content-center">
             {groceryItems.map((product) => (
@@ -16,6 +16,7 @@ const Deals = ({ setcartNumber, setCart }) => {
                 <ProductCard
                   setcartNumber={setcartNumber}
                   product={product}
+                  cart={cart}
                   setCart={setCart}
                 />
               </div>
@@ -27,4 +28,4 @@ const Deals = ({ setcartNumber, setCart }) => {
   );
 };
 
-export default Deals;
+export default Products;

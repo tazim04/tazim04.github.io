@@ -64,9 +64,9 @@ const groceryItems = [
   },
   {
     id: 7,
-    name: "Ground Beef",
+    name: "Steak",
     image: steak,
-    description: "Lean ground beef, 500g pack",
+    description: "Steak, 500g pack",
     price: 6.49,
     unit: "500g",
     pricePerKg: 12.98,

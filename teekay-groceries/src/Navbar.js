@@ -2,6 +2,7 @@ import "./styles/Navbar.css";
 import profile from "./assets/profile.png";
 import cart from "./assets/shopping-cart-icon.png";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
   const handleCartClick = () => {
@@ -12,9 +13,9 @@ const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
     <div style={{ padding: "0px", zIndex: 1000 }}>
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid" style={{ padding: "0px" }}>
-          <a
+          <Link
             class="navbar-brand"
-            href="index.html"
+            to="/"
             style={{
               fontFamily: "verdana",
               color: "#358D2D",
@@ -25,7 +26,7 @@ const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
             }}
           >
             TeeKay Groceries
-          </a>
+          </Link>
           <div
             class="ps-5 me-auto pe-5"
             style={{
@@ -52,7 +53,7 @@ const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
             style={{
               background: "#75DA6D",
               height: "80px",
-              width: "295px",
+              width: "300px",
               position: "relative",
               top: "-11.5px",
             }}
@@ -70,13 +71,13 @@ const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
             "
               />
               <div
-                className="signIn"
+                class="signIn"
                 style={{ display: "flex", alignItems: "center", margin: "0" }}
               >
                 <button class="btn">Sign In</button>
               </div>
 
-              <div className="cart">
+              <div class="cart">
                 <input
                   type="image"
                   src={cart}
@@ -92,7 +93,7 @@ const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
                 />
               </div>
               <div
-                className="cartNumber"
+                class="cartNumber"
                 style={{ paddingRight: "10px", fontWeight: "bold" }}
               >
                 {cartNumber}
@@ -103,17 +104,15 @@ const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
       </nav>
 
       <nav
-        class="navbar navbar-expand-lg bg-white"
+        class="navbar navbar-expand-lg bg-white d-flex justify-content-center text-center"
         style={{
           position: "relative",
           top: "-10px",
+          left: "13%",
           margin: "0",
         }}
       >
-        <div
-          class="container-fluid d-flex justify-content-center text-center sticky-top"
-          id="navbarNav"
-        >
+        <div class="container-fluid sticky-top" id="navbarNav">
           <ul class="navbar-nav row gx-5" style={{ width: "100%" }}>
             <li
               class="nav-item col-md-2"
@@ -155,21 +154,13 @@ const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
               class="nav-item col-md-2"
               style={{ marginRight: "20px", marginLeft: "20px" }}
             >
-              <a class="nav-link active " style={{ cursor: "pointer" }}>
-                Flyers
-              </a>
-            </li>
-            <li
-              class="nav-item col-md-2"
-              style={{ marginRight: "20px", marginLeft: "20px" }}
-            >
-              <a
+              <Link
                 class="nav-link active "
                 style={{ cursor: "pointer" }}
-                onClick="document.getElementById('services').scrollIntoView();"
+                to="/flyer"
               >
-                Recipes
-              </a>
+                Flyers
+              </Link>
             </li>
             <li
               class="nav-item col-md-2"
