@@ -1,8 +1,10 @@
 import React from "react";
 import groceryItems from "./groceryItems";
 import add_to_cart from "./assets/add_to_cart.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const ProductCard = ({ product, setcartNumber, cart, setCart }) => {
+const ProductCard = ({ product, setCartNumber, cart, setCart }) => {
   const { id, name, image, description, price, unit, pricePerKg } = product;
 
   const addToCart = () => {
@@ -22,7 +24,8 @@ const ProductCard = ({ product, setcartNumber, cart, setCart }) => {
         return [...prevCart, { id, name, price, image, quantity: 1 }]; // add new item to cart
       }
     });
-    setcartNumber((prev) => prev + 1);
+    setCartNumber((prev) => prev + 1);
+    toast.success(name + " added to cart!");
   };
 
   return (

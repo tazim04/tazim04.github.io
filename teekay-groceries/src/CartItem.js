@@ -1,5 +1,7 @@
 import "./styles//CartItem.css";
 import garbage from "./assets/garbage.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CartItem = ({
   id,
@@ -20,6 +22,7 @@ const CartItem = ({
     console.log("Cart number: " + cart.length);
     console.log("Quantity: " + quantity);
     setCartNumber((prev) => prev - quantity); // update cart number
+    toast.error(name + " removed from cart!");
   };
   const incrementQuantity = () => {
     console.log("Incrementing quantity of " + name + " in cart");
@@ -57,8 +60,14 @@ const CartItem = ({
 
   return (
     <div
-      class="card border-0 row cart container-fluid"
-      style={{ width: "980px" }}
+      class="card row cart container-fluid"
+      style={{
+        width: "420%",
+        borderBottom: "1px solid black",
+        borderTop: "none",
+        borderRight: "none",
+        borderLeft: "none",
+      }}
     >
       <div class="card-body d-flex align-items-center">
         <img

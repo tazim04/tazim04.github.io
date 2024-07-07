@@ -1,6 +1,7 @@
 import homeApple from "./assets/homeApple.png";
 import flyerCarousel from "./assets/flyer_carousel.webp";
 import "./styles/Carousel.css";
+import { Link } from "react-router-dom";
 
 const Carousel = () => {
   return (
@@ -11,16 +12,6 @@ const Carousel = () => {
     >
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="parent" style={{ background: "orange" }}>
-            <img
-              src={homeApple}
-              class="d-block"
-              alt="best prices"
-              style={{ width: "780px" }}
-            />
-          </div>
-        </div>
-        <div class="carousel-item">
           <div
             class="parent"
             style={{
@@ -31,7 +22,7 @@ const Carousel = () => {
           >
             <h2
               style={{
-                padding: "100px 0 0 100px",
+                padding: "100px 0 0 150px",
                 fontFamily: "sans-serif",
                 fontWeight: "bold",
               }}
@@ -46,6 +37,60 @@ const Carousel = () => {
                 position: "relative",
                 right: "-10%",
               }}
+            />
+
+            <Link
+              class="btn"
+              style={{
+                color: "white",
+                position: "absolute",
+                left: "145px",
+                bottom: "200px",
+                width: "300px",
+                height: "50px",
+                background: "#358D2D",
+                fontSize: "20px",
+              }}
+              to="/flyer"
+            >
+              Learn More
+            </Link>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="parent" style={{ background: "orange", height: "500px" }}>
+            <h2
+              style={{
+                fontFamily: "sans-serif",
+                position: "absolute",
+                fontWeight: "bold",
+                right: "10%",
+                top: "20%",
+              }}
+            >
+              Have questions? Contact us!
+            </h2>
+            <Link
+              class="btn"
+              style={{
+                color: "white",
+                position: "absolute",
+                right: "285px",
+                bottom: "200px",
+                width: "300px",
+                height: "50px",
+                background: "#358D2D",
+                fontSize: "20px",
+              }}
+              to="/contact"
+            >
+              Contact Us
+            </Link>
+            <img
+              src={homeApple}
+              class="d-block"
+              alt="best prices"
+              style={{ width: "780px" }}
             />
           </div>
         </div>

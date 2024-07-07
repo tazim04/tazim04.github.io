@@ -4,6 +4,7 @@ import CartItem from "./CartItem";
 
 const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
   const [modalDisplay, setModalDisplay] = useState("none");
+  const [selectedRadio, setSelectedRadio] = useState("address");
 
   useEffect(() => {
     if (show) {
@@ -16,6 +17,77 @@ const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
 
   const handleCloseModal = () => {
     setShow(false); // hide the cart
+  };
+
+  const shippingOptions = () => {
+    if (cart.length > 0) {
+      return (
+        <div class="proceed" style={{ fontWeight: "500", textAlign: "center" }}>
+          <div
+            class="shipToAddress"
+            style={{
+              border: "2px solid black",
+              display: "inline-block",
+              borderRadius: "15px",
+              cursor: "pointer",
+              marginRight: "50px",
+            }}
+            onClick={() => handleRadioClick("address")}
+          >
+            <div class="form-check" style={{ padding: "20px 100px 20px 50px" }}>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="address"
+                id="address"
+                checked={selectedRadio === "address"}
+                onChange={() => handleRadioClick}
+              />
+              <label class="form-check-label" for="address">
+                Ship to an address
+              </label>
+            </div>
+          </div>
+
+          <div
+            class="pickUp"
+            style={{
+              border: "2px solid black",
+              display: "inline-block",
+              borderRadius: "15px",
+              cursor: "pointer",
+            }}
+            onClick={() => handleRadioClick("store")}
+          >
+            <div class="form-check" style={{ padding: "20px 100px 20px 50px" }}>
+              <input
+                class="form-check-input"
+                type="radio"
+                name="store"
+                id="store"
+                checked={selectedRadio === "store"}
+                onChange={() => handleRadioClick}
+              />
+              <label class="form-check-label" for="store">
+                Pick up in store
+              </label>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  };
+
+  const handleRadioClick = (selected) => {
+    console.log("Selected: " + selected);
+    switch (selected) {
+      case "address":
+        setSelectedRadio("address");
+        break;
+      case "store":
+        setSelectedRadio("store");
+        break;
+    }
   };
 
   return (
@@ -42,7 +114,6 @@ const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
               </div>
             ))
           ) : (
-            // if there are no items in the cart
             <div class="noItems">
               <h5 style={{ textAlign: "center", paddingTop: "50px" }}>
                 No items in your cart!
@@ -50,6 +121,8 @@ const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
             </div>
           )}
         </div>
+
+        <div class="shippingOptions">{shippingOptions()}</div>
       </div>
     </div>
   );

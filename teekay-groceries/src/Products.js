@@ -2,7 +2,7 @@ import "./styles/Products.css";
 import ProductCard from "./ProductCard";
 import groceryItems from "./groceryItems";
 
-const Products = ({ setcartNumber, cart, setCart }) => {
+const Products = ({ setCartNumber, cart, setCart }) => {
   return (
     <div class="Products">
       <div class="container" style={{ position: "relative", top: 100 }}>
@@ -14,7 +14,7 @@ const Products = ({ setcartNumber, cart, setCart }) => {
             {groceryItems.map((product) => (
               <div key={product.id} class="col-md-3 py-4 px-4">
                 <ProductCard
-                  setcartNumber={setcartNumber}
+                  setCartNumber={setCartNumber}
                   product={product}
                   cart={cart}
                   setCart={setCart}

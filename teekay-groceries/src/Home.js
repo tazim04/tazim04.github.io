@@ -2,12 +2,12 @@ import Carousel from "./Carousel";
 import Products from "./Products";
 import groceryItems from "./groceryItems";
 
-const Home = ({ cartNumber, setcartNumber, cart, setCart }) => {
+const Home = ({ cartNumber, setCartNumber, cart, setCart }) => {
   return (
     <div class="homepage">
       <Carousel />
 
-      <Products setcartNumber={setcartNumber} cart={cart} setCart={setCart} />
+      <Products setCartNumber={setCartNumber} cart={cart} setCart={setCart} />
     </div>
   );
 };

@@ -2,13 +2,30 @@ import "./styles/Navbar.css";
 import profile from "./assets/profile.png";
 import cart from "./assets/shopping-cart-icon.png";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import groceryItems from "./groceryItems";
 
 const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
+  const [search, setSearch] = useState("");
+
+  const history = useHistory(); // used to redirect to search page
+
   const handleCartClick = () => {
     console.log("Cart clicked! show: " + show);
     setShow(!show); // toggle the cart
   };
+
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value); // update search state
+    console.log("handleSearchChange: " + search);
+  };
+
+  const handleSearchSubmit = (e) => {
+    console.log("handleSearchSubmit: " + search);
+    e.preventDefault(); // prevent form from refreshing page
+    history.push(`/search?search=${encodeURIComponent(search)}`); // redirect to search page
+  };
+
   return (
     <div style={{ padding: "0px", zIndex: 1000 }}>
       <nav class="navbar navbar-expand-lg">
@@ -35,12 +52,19 @@ const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
               width: "75%",
             }}
           >
-            <form class="d-flex " role="search">
+            <form
+              class="d-flex "
+              role="search"
+              id="searchForm"
+              onSubmit={handleSearchSubmit}
+            >
               <input
                 class="form-control me-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Search products..."
                 aria-label="Search"
+                value={search}
+                onChange={handleSearchChange}
               />
               <button class="btn btn-outline-success" type="submit">
                 Search
