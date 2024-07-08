@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import "./styles/Cart.css";
 import CartItem from "./CartItem";
+import { Link, useHistory } from "react-router-dom";
 
 const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
   const [modalDisplay, setModalDisplay] = useState("none");
-  const [selectedRadio, setSelectedRadio] = useState("address");
+  const [selectedRadio, setSelectedRadio] = useState("shipping");
+
+  const history = useHistory(); // used to redirect to checkout page
 
   useEffect(() => {
     if (show) {
@@ -19,7 +22,7 @@ const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
     setShow(false); // hide the cart
   };
 
-  const shippingOptions = () => {
+  const cartNotEmpty = () => {
     if (cart.length > 0) {
       return (
         <div class="proceed" style={{ fontWeight: "500", textAlign: "center" }}>
@@ -32,18 +35,18 @@ const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
               cursor: "pointer",
               marginRight: "50px",
             }}
-            onClick={() => handleRadioClick("address")}
+            onClick={() => handleRadioClick("shipping")}
           >
             <div class="form-check" style={{ padding: "20px 100px 20px 50px" }}>
               <input
                 class="form-check-input"
                 type="radio"
-                name="address"
-                id="address"
-                checked={selectedRadio === "address"}
+                name="shipping"
+                id="shipping"
+                checked={selectedRadio === "shipping"}
                 onChange={() => handleRadioClick}
               />
-              <label class="form-check-label" for="address">
+              <label class="form-check-label" for="shipping">
                 Ship to an address
               </label>
             </div>
@@ -57,22 +60,42 @@ const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
               borderRadius: "15px",
               cursor: "pointer",
             }}
-            onClick={() => handleRadioClick("store")}
+            onClick={() => handleRadioClick("pickup")}
           >
             <div class="form-check" style={{ padding: "20px 100px 20px 50px" }}>
               <input
                 class="form-check-input"
                 type="radio"
-                name="store"
-                id="store"
-                checked={selectedRadio === "store"}
+                name="pickup"
+                id="pickup"
+                checked={selectedRadio === "pickup"}
                 onChange={() => handleRadioClick}
               />
-              <label class="form-check-label" for="store">
+              <label class="form-check-label" for="pickup">
                 Pick up in store
               </label>
             </div>
           </div>
+          <div class="total">
+            <h3>Total: ${calculateTotal()}</h3>
+          </div>
+          <Link
+            to={`/${selectedRadio}`}
+            class="btn checkout"
+            style={{
+              width: "250px",
+              background: "#75DA6D",
+              fontWeight: "bold",
+              position: "absolute",
+              bottom: "40px",
+              right: "100px",
+            }}
+            onClick={() => {
+              setShow(false);
+            }}
+          >
+            Proceed to Checkout
+          </Link>
         </div>
       );
     }
@@ -81,13 +104,21 @@ const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
   const handleRadioClick = (selected) => {
     console.log("Selected: " + selected);
     switch (selected) {
-      case "address":
-        setSelectedRadio("address");
+      case "shipping":
+        setSelectedRadio("shipping");
         break;
-      case "store":
-        setSelectedRadio("store");
+      case "pickup":
+        setSelectedRadio("pickup");
         break;
     }
+  };
+
+  const calculateTotal = () => {
+    let total = 0;
+    cart.forEach((item) => {
+      total += item.price * item.quantity;
+    });
+    return total;
   };
 
   return (
@@ -122,7 +153,7 @@ const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
           )}
         </div>
 
-        <div class="shippingOptions">{shippingOptions()}</div>
+        <div class="cartNotEmpty">{cartNotEmpty()}</div>
       </div>
     </div>
   );

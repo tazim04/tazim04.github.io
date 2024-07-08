@@ -33,3 +33,19 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.total {
+  position: absolute;
+  bottom: 100px;
+  right: 200px;
+}
+
+.checkout {
+  transition: transform all 0.2s;
+}
+.checkout:hover {
+  transform: scale(0.98);
+}
+.checkout:active {
+  transform: scale(1);
+}
