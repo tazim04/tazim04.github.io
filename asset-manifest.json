@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/teekay-groceries/static/css/main.294d48f4.css",
+    "main.js": "/teekay-groceries/static/js/main.f1a9f8ca.js",
+    "static/media/steak.png": "/teekay-groceries/static/media/steak.2556e8b7b79d678493d0.png",
+    "static/media/salmon.png": "/teekay-groceries/static/media/salmon.8f9e7191ed666d440ac4.png",
+    "static/media/banana.png": "/teekay-groceries/static/media/banana.f5eba01efed4cb8faf3f.png",
+    "static/media/homeApple.png": "/teekay-groceries/static/media/homeApple.981e76f5e4f381a84501.png",
+    "static/media/flyer.jpg": "/teekay-groceries/static/media/flyer.5b94c4b8bdf9faaf17df.jpg",
+    "static/media/yogurt.png": "/teekay-groceries/static/media/yogurt.ee091b8e0bd984a62d71.png",
+    "static/media/flyer_carousel.webp": "/teekay-groceries/static/media/flyer_carousel.0f2608fca970b500402c.webp",
+    "static/media/milk.png": "/teekay-groceries/static/media/milk.a3b474e7137f83516831.png",
+    "static/media/orange.png": "/teekay-groceries/static/media/orange.177957cda591004aa043.png",
+    "static/media/apple.png": "/teekay-groceries/static/media/apple.0511aa7526aee7d41a20.png",
+    "static/media/profile.png": "/teekay-groceries/static/media/profile.b11f45a152bb037786cd.png",
+    "static/media/add_to_cart.png": "/teekay-groceries/static/media/add_to_cart.bff8e165b501d8148c0e.png",
+    "index.html": "/teekay-groceries/index.html",
+    "main.294d48f4.css.map": "/teekay-groceries/static/css/main.294d48f4.css.map",
+    "main.f1a9f8ca.js.map": "/teekay-groceries/static/js/main.f1a9f8ca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.294d48f4.css",
+    "static/js/main.f1a9f8ca.js"
+  ]
+}
