@@ -23,7 +23,7 @@ function App() {
   const [form, setForm] = useState([]);
 
   return (
-    <Router>
+    <Router basename="/teekay-groceries">
       <ToastContainer
         position="top-right"
         autoClose={1000}
