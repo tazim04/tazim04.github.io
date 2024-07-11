@@ -13,26 +13,33 @@ const ShippingInfo = ({ form, setForm }) => {
 
   const history = useHistory();
 
-  const handleNextClick = () => {
-    console.log("Next clicked!");
-    setForm({
-      ...form,
-      firstName: firstName,
-      lastName: lastName,
-      streetAddress: streetAddress,
-      province: province,
-      city: city,
-      postalCode: postalCode,
-    });
-    history.push("/payment");
+  const handleNextClick = (e) => {
+    e.preventDefault();
+
+    const formElement = document.getElementById("shippingForm");
+    if (formElement.checkValidity()) {
+      // validate form first
+      setForm({
+        ...form,
+        firstName: firstName,
+        lastName: lastName,
+        streetAddress: streetAddress,
+        province: province,
+        city: city,
+        postalCode: postalCode,
+      });
+      history.push("/payment"); // redirect to payment page
+    } else {
+      formElement.classList.add("was-validated"); // show validation feedback
+    }
   };
   return (
-    <div>
-      <h1 style={{ paddingBottom: "100px", paddingTop: "30px" }}>
+    <div class="mx-auto" style={{ width: "75%" }}>
+      <h1 style={{ paddingBottom: "10px", paddingTop: "10px" }}>
         Enter Shipping Information
       </h1>
 
-      <form action="" id="shippingForm">
+      <form class="needs-validation" action="" id="shippingForm" noValidate>
         <div style={{ margin: "auto", width: "100%" }}>
           <label htmlFor="PatientName" class="form-label fw-bold">
             Name

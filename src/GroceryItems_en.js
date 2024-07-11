@@ -16,6 +16,7 @@ const groceryItems = [
     price: 2.99,
     unit: "ea.",
     pricePerKg: 5.6,
+    category: "Produce",
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ const groceryItems = [
     price: 3.49,
     unit: "bunch",
     pricePerKg: 2.8,
+    category: "Produce",
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const groceryItems = [
     price: 1.99,
     unit: "ea.",
     pricePerKg: 4.5,
+    category: "Produce",
   },
   {
     id: 4,
@@ -43,6 +46,7 @@ const groceryItems = [
     price: 1.79,
     unit: "L",
     pricePerLitre: 1.79,
+    category: "Dairy",
   },
   {
     id: 5,
@@ -52,6 +56,7 @@ const groceryItems = [
     price: 2.99,
     unit: "750g",
     pricePerEgg: null,
+    category: "Dairy",
   },
   {
     id: 6,
@@ -61,6 +66,7 @@ const groceryItems = [
     price: 9.99,
     unit: "kg",
     pricePerKg: 9.99,
+    category: "Meat and Poultry",
   },
   {
     id: 7,
@@ -70,6 +76,7 @@ const groceryItems = [
     price: 6.49,
     unit: "500g",
     pricePerKg: 12.98,
+    category: "Meat and Poultry",
   },
   {
     id: 8,
@@ -79,6 +86,7 @@ const groceryItems = [
     price: 19.99,
     unit: "kg",
     pricePerKg: 19,
+    category: "Meat and Poultry",
   },
 ];
 

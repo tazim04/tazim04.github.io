@@ -1,15 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { ProgressBar, Step } from "react-step-progress-bar";
 import { Link, useHistory } from "react-router-dom";
 
 const PickUp = ({ form, setForm }) => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [location, setLocation] = useState("");
+  const [pickUpDate, setPickUpDate] = useState("");
+  const [pickUpTime, setPickUpTime] = useState("");
+
+  const history = useHistory();
+
+  const handleNextClick = (e) => {
+    e.preventDefault();
+
+    const formElement = document.getElementById("pickUpForm");
+    if (formElement.checkValidity()) {
+      setForm({
+        ...form,
+        firstName: firstName,
+        lastName: lastName,
+        location: location,
+        pickUpDate: pickUpDate,
+        pickUpTime: pickUpTime,
+      });
+      history.push("/payment");
+    } else {
+      formElement.classList.add("was-validated");
+    }
+  };
+
   return (
-    <div>
-      <h1 style={{ paddingBottom: "100px", paddingTop: "30px" }}>
+    <div class="mx-auto" style={{ width: "75%" }}>
+      <h1 style={{ paddingBottom: "10px", paddingTop: "10px" }}>
         Enter Pick-Up Information
       </h1>
 
-      <form action="" id="shippingForm">
+      <form class="needs-validation" action="" id="pickUpForm" noValidate>
         <div style={{ margin: "auto", width: "100%" }}>
           <label htmlFor="PatientName" class="form-label fw-bold">
             Name
@@ -23,6 +50,8 @@ const PickUp = ({ form, setForm }) => {
               aria-label="First name"
               aria-describedby="basic-addon1"
               required
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
             />
             <input
               type="text"
@@ -32,6 +61,8 @@ const PickUp = ({ form, setForm }) => {
               aria-label="Last name"
               aria-describedby="basic-addon1"
               required
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
             />
           </div>
 
@@ -48,6 +79,8 @@ const PickUp = ({ form, setForm }) => {
             id="province"
             aria-label="province"
             required
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
           >
             <option selected disabled value="">
               Locations
@@ -69,12 +102,16 @@ const PickUp = ({ form, setForm }) => {
             class="form-control"
             style={{ height: "20%" }}
             required
+            value={pickUpDate}
+            onChange={(e) => setPickUpDate(e.target.value)}
           />
           <select
             class="form-select mb-3"
             id="pickUpTime"
             aria-label="time"
             required
+            value={pickUpTime}
+            onChange={(e) => setPickUpTime(e.target.value)}
           >
             <option selected disabled value="">
               Available Times
@@ -136,8 +173,7 @@ const PickUp = ({ form, setForm }) => {
           </select>
         </div>
 
-        <Link
-          to="/payment"
+        <button
           class="btn checkout"
           style={{
             width: "250px",
@@ -147,9 +183,10 @@ const PickUp = ({ form, setForm }) => {
             left: "41%",
             top: "40px",
           }}
+          onClick={handleNextClick}
         >
           Next
-        </Link>
+        </button>
       </form>
     </div>
   );

@@ -1,0 +1,43 @@
+{
+  "home": {
+    "seeProducts": "See our products!",
+    "filters": "Filters",
+    "filterVals": {
+      "produce": "Produce",
+      "dairy": "Dairy",
+      "meat": "Meat and Poultry"
+    },
+    "carousel": {
+      "checkFlyer": "Check out our flyer!",
+      "learnMore": "Learn More",
+      "questions": "Have questions? Contact us!",
+      "contact": "Contact Us"
+    }
+  },
+  "nav": {
+    "search": "Search",
+    "searchProducts": "Search Products...",
+    "blog": "Blog",
+    "flyer": "Flyers",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "footer": {
+    "hours": "Hours",
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
+    "links": "Quick Links",
+    "home": "Home",
+    "contact": "Contact Us",
+    "about": "About Us",
+    "blog": "Blog"
+  },
+  "searchResults": "Search Results..."
+}

@@ -2,8 +2,11 @@ import homeApple from "./assets/homeApple.png";
 import flyerCarousel from "./assets/flyer_carousel.webp";
 import "./styles/Carousel.css";
 import { Link } from "react-router-dom";
+import translations from "./lang/translations";
 
-const Carousel = () => {
+const Carousel = ({ lang }) => {
+  const t = translations[lang]; // get translations for selected language
+
   return (
     <div
       id="carousel"
@@ -27,7 +30,7 @@ const Carousel = () => {
                 fontWeight: "bold",
               }}
             >
-              Check out our flyer!
+              {t.home.carousel.checkFlyer}
             </h2>
             <img
               src={flyerCarousel}
@@ -53,7 +56,7 @@ const Carousel = () => {
               }}
               to="/flyer"
             >
-              Learn More
+              {t.home.carousel.learnMore}
             </Link>
           </div>
         </div>
@@ -68,7 +71,7 @@ const Carousel = () => {
                 top: "20%",
               }}
             >
-              Have questions? Contact us!
+              {t.home.carousel.questions}
             </h2>
             <Link
               class="btn"
@@ -84,7 +87,7 @@ const Carousel = () => {
               }}
               to="/contact"
             >
-              Contact Us
+              {t.home.carousel.contact}
             </Link>
             <img
               src={homeApple}

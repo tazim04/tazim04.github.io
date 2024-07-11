@@ -56,3 +56,20 @@
 .cartIcon:hover {
   filter: invert(100%);
 }
+
+.profile {
+  transition: all 0.2s;
+}
+.profile:hover {
+  filter: invert(100%);
+  cursor: pointer;
+}
+
+.lang {
+  transition: all 0.2s;
+}
+.lang:hover {
+  background-color: rgb(59, 185, 21);
+  border-radius: 20%;
+  cursor: pointer;
+}

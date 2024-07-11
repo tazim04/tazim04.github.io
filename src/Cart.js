@@ -3,9 +3,16 @@ import "./styles/Cart.css";
 import CartItem from "./CartItem";
 import { Link, useHistory } from "react-router-dom";
 
-const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
+const Cart = ({
+  show,
+  setShow,
+  cart,
+  setCart,
+  setCartNumber,
+  selectedRadio,
+  setSelectedRadio,
+}) => {
   const [modalDisplay, setModalDisplay] = useState("none");
-  const [selectedRadio, setSelectedRadio] = useState("shipping");
 
   const history = useHistory(); // used to redirect to checkout page
 
@@ -25,7 +32,10 @@ const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
   const cartNotEmpty = () => {
     if (cart.length > 0) {
       return (
-        <div class="proceed" style={{ fontWeight: "500", textAlign: "center" }}>
+        <div
+          class="proceed"
+          style={{ fontWeight: "500", textAlign: "center", paddingTop: "10px" }}
+        >
           <div
             class="shipToAddress"
             style={{
@@ -118,7 +128,7 @@ const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
     cart.forEach((item) => {
       total += item.price * item.quantity;
     });
-    return total;
+    return total.toFixed(2);
   };
 
   return (
@@ -128,7 +138,7 @@ const Cart = ({ show, setShow, cart, setCart, setCartNumber }) => {
           &times;
         </div>
         <h3>Cart</h3>
-        <div class="items">
+        <div class="items" style={{ height: "400px" }}>
           {cart.length > 0 ? ( // if there are items in the cart
             cart.map((item) => (
               <div key={item.id} class="col-md-3 py-4 px-4">

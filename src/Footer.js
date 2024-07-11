@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import translations from "./lang/translations";
 
-const Footer = () => {
+const Footer = ({ lang }) => {
+  const t = translations[lang]; // get translations for selected language
+
   return (
     <div
-      style={{ backgroundColor: "#75DA6D", position: "relative", top: "500px" }}
+      style={{ backgroundColor: "#75DA6D", position: "relative", top: "100px" }}
       id="footer"
     >
       <footer
@@ -11,7 +14,7 @@ const Footer = () => {
         style={{ width: "80%", margin: "auto", fontWeight: "bold" }}
       >
         <div class="col mb-3">
-          <h5 class="text-black">Contact Us</h5>
+          <h5 class="text-black">{t.footer.contact}</h5>
           <div
             style={{
               borderBottom: "1px solid black",
@@ -28,7 +31,7 @@ const Footer = () => {
         </div>
 
         <div class="col mb-3">
-          <h5 class="text-black">Our Hours</h5>
+          <h5 class="text-black">{t.footer.hours}</h5>
           <div
             style={{
               borderBottom: "1px solid black",
@@ -39,13 +42,13 @@ const Footer = () => {
           <ul class="nav flex-column">
             <div class="row text-black" style={{ width: "70%" }}>
               <div class="col">
-                <li class="nav-item mb-2">Monday</li>
-                <li class="nav-item mb-2">Tuesday</li>
-                <li class="nav-item mb-2">Wednesday</li>
-                <li class="nav-item mb-2">Thursday</li>
-                <li class="nav-item mb-2">Friday</li>
-                <li class="nav-item mb-2">Saturday</li>
-                <li class="nav-item mb-2">Sunday</li>
+                <li class="nav-item mb-2">{t.footer.days.monday}</li>
+                <li class="nav-item mb-2">{t.footer.days.tuesday}</li>
+                <li class="nav-item mb-2">{t.footer.days.wednesday}</li>
+                <li class="nav-item mb-2">{t.footer.days.thursday}</li>
+                <li class="nav-item mb-2">{t.footer.days.friday}</li>
+                <li class="nav-item mb-2">{t.footer.days.saturday}</li>
+                <li class="nav-item mb-2">{t.footer.days.sunday}</li>
               </div>
               <div class="col">
                 <li class="nav-item mb-2">8am-10pm</li>
@@ -61,7 +64,7 @@ const Footer = () => {
         </div>
 
         <div class="col mb-3">
-          <h5 class="text-black">Quick Links</h5>
+          <h5 class="text-black">{t.footer.links}</h5>
           <div
             style={{
               borderBottom: "1px solid black",
@@ -76,7 +79,7 @@ const Footer = () => {
                 class="nav-link p-0 text-black"
                 style={{ marginBottom: "20px" }}
               >
-                Home
+                {t.footer.home}
               </Link>
             </li>
             <li class="nav-item mb-2">
@@ -85,7 +88,7 @@ const Footer = () => {
                 class="nav-link p-0 text-black"
                 style={{ marginBottom: "20px" }}
               >
-                Aisles
+                {t.footer.blog}
               </Link>
             </li>
             <li class="nav-item mb-2">
@@ -94,7 +97,7 @@ const Footer = () => {
                 class="nav-link p-0 text-black"
                 style={{ marginBottom: "20px" }}
               >
-                About Us
+                {t.footer.about}
               </Link>
             </li>
             <li class="nav-item mb-2">
@@ -103,7 +106,7 @@ const Footer = () => {
                 class="nav-link p-0 text-black"
                 style={{ marginBottom: "20px" }}
               >
-                Contact Us
+                {t.footer.contact}
               </Link>
             </li>
           </ul>

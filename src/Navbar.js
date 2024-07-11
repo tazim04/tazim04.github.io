@@ -1,12 +1,21 @@
 import "./styles/Navbar.css";
+import translations from "./lang/translations";
 import profile from "./assets/profile.png";
 import cart from "./assets/shopping-cart-icon.png";
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import groceryItems from "./groceryItems";
 
-const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
+const Navbar = ({
+  cartNumber,
+  setcartNumber,
+  show,
+  setShow,
+  lang,
+  setLang,
+}) => {
   const [search, setSearch] = useState("");
+
+  const t = translations[lang]; // get translations for selected language
 
   const history = useHistory(); // used to redirect to search page
 
@@ -26,9 +35,23 @@ const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
     history.push(`/search?search=${encodeURIComponent(search)}`); // redirect to search page
   };
 
+  const handleProfileClick = () => {
+    console.log("Profile clicked!");
+
+    history.push("/profile"); // redirect to profile page
+  };
+
+  const handleLanguageChange = (language) => {
+    console.log("Language changed to " + language);
+    setLang(language); // update language state
+  };
+
   return (
-    <div style={{ padding: "0px", zIndex: 1000 }}>
-      <nav class="navbar navbar-expand-lg">
+    <div style={{ padding: "0px" }}>
+      <nav
+        class="navbar navbar-expand-lg"
+        style={{ paddingBottom: "10px", zIndex: 1000 }}
+      >
         <div class="container-fluid" style={{ padding: "0px" }}>
           <Link
             class="navbar-brand"
@@ -61,13 +84,13 @@ const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
               <input
                 class="form-control me-2"
                 type="search"
-                placeholder="Search products..."
+                placeholder={t.nav.searchProducts}
                 aria-label="Search"
                 value={search}
                 onChange={handleSearchChange}
               />
               <button class="btn btn-outline-success" type="submit">
-                Search
+                {t.nav.search}
               </button>
             </form>
           </div>
@@ -89,16 +112,56 @@ const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
               }}
             >
               <img
+                class="profile"
                 src={profile}
                 style={{ width: "50px", height: "auto", margin: "0" }}
-                alt="profile
-            "
+                alt="profile"
+                onClick={handleProfileClick}
               />
               <div
-                class="signIn"
-                style={{ display: "flex", alignItems: "center", margin: "0" }}
+                class="language"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  margin: "0",
+                  width: "50px",
+                }}
               >
-                <button class="btn">Sign In</button>
+                <div class="lang">
+                  <button
+                    class="btn"
+                    type="button"
+                    id="languageDropdown"
+                    data-bs-toggle="dropdown"
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                    }}
+                  >
+                    {lang}
+                  </button>
+                  <ul
+                    class="dropdown-menu language-dropdown-menu"
+                    aria-labelledby="languageDropdown"
+                  >
+                    <li>
+                      <button
+                        class="dropdown-item language-dropdown-item"
+                        onClick={() => handleLanguageChange("EN")}
+                      >
+                        English
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="dropdown-item language-dropdown-item"
+                        onClick={() => handleLanguageChange("FR")}
+                      >
+                        French
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               </div>
 
               <div class="cart">
@@ -136,42 +199,19 @@ const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
           margin: "0",
         }}
       >
-        <div class="container-fluid sticky-top" id="navbarNav">
+        <div class="container-fluid " id="navbarNav">
           <ul class="navbar-nav row gx-5" style={{ width: "100%" }}>
             <li
               class="nav-item col-md-2"
               style={{ marginRight: "20px", marginLeft: "20px" }}
             >
-              <div class="dropdown">
-                <a
-                  class="btn dropdown-toggle aisles"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  href="#"
-                  role="button"
-                  style={{ fontSize: "15px", fontWeight: "600" }}
-                >
-                  Aisles
-                </a>
-                <ul class="dropdown-menu" style={{ zIndex: 1000 }}>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              <Link
+                to="/blog"
+                class="nav-link active "
+                style={{ cursor: "pointer" }}
+              >
+                {t.nav.blog}
+              </Link>
             </li>
 
             <li
@@ -183,21 +223,29 @@ const Navbar = ({ cartNumber, setcartNumber, show, setShow }) => {
                 style={{ cursor: "pointer" }}
                 to="/flyer"
               >
-                Flyers
+                {t.nav.flyer}
               </Link>
             </li>
             <li
               class="nav-item col-md-2"
               style={{ marginRight: "20px", marginLeft: "20px" }}
             >
-              <a class="nav-link active " style={{ cursor: "pointer" }}>
-                About Us
-              </a>
+              <Link
+                to="/about"
+                class="nav-link active "
+                style={{ cursor: "pointer" }}
+              >
+                {t.nav.about}
+              </Link>
             </li>
             <li class="nav-item col-md-2">
-              <a class="nav-link active " style={{ cursor: "pointer" }}>
-                Contact
-              </a>
+              <Link
+                to="/contact"
+                class="nav-link active "
+                style={{ cursor: "pointer" }}
+              >
+                {t.nav.contact}
+              </Link>
             </li>
           </ul>
         </div>

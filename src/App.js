@@ -10,6 +10,10 @@ import PickUp from "./PickUp";
 import SearchResult from "./SearchResult";
 import PaymentInfo from "./PaymentInfo";
 import CheckOut from "./CheckOut";
+import Confirmation from "./Confirmation";
+import Profile from "./Profile";
+import Blog from "./Blog";
+import About from "./About";
 
 import React, { useState, useEffect } from "react";
 import { Bounce, ToastContainer, toast } from "react-toastify";
@@ -21,12 +25,15 @@ function App() {
   const [cart, setCart] = useState([]);
   const [show, setShow] = useState(false);
   const [form, setForm] = useState([]);
+  const [selectedRadio, setSelectedRadio] = useState("shipping");
+  const [orders, setOrders] = useState([]);
+  const [lang, setLang] = useState("EN");
 
   return (
     <Router basename="/teekay-groceries">
       <ToastContainer
         position="top-right"
-        autoClose={1000}
+        autoClose={500}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -44,12 +51,16 @@ function App() {
           cart={cart}
           setCart={setCart}
           setCartNumber={setCartNumber}
+          selectedRadio={selectedRadio}
+          setSelectedRadio={setSelectedRadio}
         />
         <Navbar
           cartNumber={cartNumber}
           setCartNumber={setCartNumber}
           show={show}
           setShow={setShow}
+          lang={lang}
+          setLang={setLang}
         />
         <Switch>
           <Route exact path="/">
@@ -58,6 +69,7 @@ function App() {
               setCartNumber={setCartNumber}
               cart={cart}
               setCart={setCart}
+              lang={lang}
             />
           </Route>
           <Route path="/flyer">
@@ -66,11 +78,15 @@ function App() {
           <Route path="/contact">
             <Contact />
           </Route>
+          <Route path="/about">
+            <About />
+          </Route>
           <Route path="/search">
             <SearchResult
               cart={cart}
               setCart={setCart}
               setCartNumber={setCartNumber}
+              lang={lang}
             />
           </Route>
           <Route path="/shipping">
@@ -83,11 +99,29 @@ function App() {
             <PaymentInfo form={form} setForm={setForm} />
           </Route>
           <Route path="/checkout">
-            <CheckOut cart={cart} form={form} />
+            <CheckOut
+              cart={cart}
+              form={form}
+              setCart={setCart}
+              cartNumber={cartNumber}
+              setCartNumber={setCartNumber}
+              selectedRadio={selectedRadio}
+              orders={orders}
+              setOrders={setOrders}
+            />
+          </Route>
+          <Route path="/confirmation">
+            <Confirmation cartNumber={cartNumber} orders={orders} />
+          </Route>
+          <Route path="/blog">
+            <Blog />
+          </Route>
+          <Route>
+            <Profile orders={orders} setOrders={setOrders} />
           </Route>
         </Switch>
       </div>
-      <Footer />
+      <Footer lang={lang} />
     </Router>
   );
 }

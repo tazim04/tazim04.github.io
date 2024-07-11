@@ -1,11 +1,17 @@
 import React from "react";
-import groceryItems from "./groceryItems";
+import groceryItems_en from "./GroceryItems_en";
+import groceryItems_fr from "./GroceryItems_fr";
 import add_to_cart from "./assets/add_to_cart.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import translations from "./lang/translations";
 
-const ProductCard = ({ product, setCartNumber, cart, setCart }) => {
+const ProductCard = ({ product, setCartNumber, cart, setCart, lang }) => {
   const { id, name, image, description, price, unit, pricePerKg } = product;
+
+  const t = translations[lang]; // get translations for selected language
+
+  const groceryItems = lang === "EN" ? groceryItems_en : groceryItems_fr; // get grocery items based on selected language
 
   const addToCart = () => {
     const itemInCartIndex = cart.findIndex((item) => item.id === id); // check if item is already in the cart

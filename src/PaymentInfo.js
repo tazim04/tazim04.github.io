@@ -10,25 +10,32 @@ const PaymentInfo = ({ form, setForm }) => {
 
   const history = useHistory();
 
-  const handleNextClick = () => {
-    setForm({
-      ...form,
-      cardNumber,
-      ccv,
-      expiryDate,
-      emailAddress,
-    });
-    console.log(form);
-    history.push("/checkout");
+  const handleNextClick = (e) => {
+    e.preventDefault();
+
+    const formElement = document.getElementById("paymentForm");
+    if (formElement.checkValidity()) {
+      // validate form first
+      setForm({
+        ...form,
+        cardNumber: cardNumber,
+        ccv: ccv,
+        expiryDate: expiryDate,
+        emailAddress: emailAddress,
+      });
+      history.push("/checkout"); // redirect to checkout page
+    } else {
+      formElement.classList.add("was-validated"); // show validation feedback
+    }
   };
 
   return (
-    <div>
-      <h1 style={{ paddingBottom: "100px", paddingTop: "30px" }}>
+    <div class="mx-auto" style={{ width: "75%" }}>
+      <h1 style={{ paddingBottom: "10px", paddingTop: "10px" }}>
         Enter Payment Information
       </h1>
 
-      <form action="" id="shippingForm">
+      <form action="" id="paymentForm">
         <div style={{ margin: "auto", width: "100%" }}>
           <label htmlFor="PatientName" className="form-label fw-bold">
             Credit Card

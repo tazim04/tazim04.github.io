@@ -63,6 +63,7 @@ const CartItem = ({
       class="card row cart container-fluid"
       style={{
         width: "420%",
+        height: "160px",
         borderBottom: "1px solid black",
         borderTop: "none",
         borderRight: "none",

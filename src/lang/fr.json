@@ -1,0 +1,43 @@
+{
+  "home": {
+    "seeProducts": "Voir nos produits !",
+    "filters": "Filtres",
+    "filterVals": {
+      "produce": "Produits frais",
+      "dairy": "Produits laitiers",
+      "meat": "Viandes et volailles"
+    },
+    "carousel": {
+      "checkFlyer": "Consultez notre dépliant !",
+      "learnMore": "En savoir plus",
+      "questions": "Vous avez des questions?",
+      "contact": "Contactez-nous"
+    }
+  },
+  "nav": {
+    "search": "Recherche",
+    "searchProducts": "Rechercher des produits...",
+    "blog": "Blog",
+    "flyer": "Dépliants",
+    "about": "À propos de nous",
+    "contact": "Contact"
+  },
+  "footer": {
+    "hours": "Heures",
+    "days": {
+      "monday": "Lundi",
+      "tuesday": "Mardi",
+      "wednesday": "Mercredi",
+      "thursday": "Jeudi",
+      "friday": "Vendredi",
+      "saturday": "Samedi",
+      "sunday": "Dimanche"
+    },
+    "links": "Liens rapides",
+    "home": "Accueil",
+    "contact": "Contactez-nous",
+    "about": "À propos de nous",
+    "blog": "Blog"
+  },
+  "searchResults": "Résultats de recherche..."
+}
