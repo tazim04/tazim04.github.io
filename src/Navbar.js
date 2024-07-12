@@ -195,7 +195,7 @@ const Navbar = ({
         style={{
           position: "relative",
           top: "-10px",
-          left: "13%",
+          left: "4%",
           margin: "0",
         }}
       >
@@ -245,6 +245,15 @@ const Navbar = ({
                 style={{ cursor: "pointer" }}
               >
                 {t.nav.contact}
+              </Link>
+            </li>
+            <li class="nav-item col-md-2">
+              <Link
+                to="/faq"
+                class="nav-link active "
+                style={{ cursor: "pointer" }}
+              >
+                FAQ
               </Link>
             </li>
           </ul>

@@ -14,6 +14,7 @@ import Confirmation from "./Confirmation";
 import Profile from "./Profile";
 import Blog from "./Blog";
 import About from "./About";
+import FAQ from "./FAQ";
 
 import React, { useState, useEffect } from "react";
 import { Bounce, ToastContainer, toast } from "react-toastify";
@@ -80,6 +81,9 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/faq">
+            <FAQ />
           </Route>
           <Route path="/search">
             <SearchResult
