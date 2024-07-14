@@ -151,10 +151,18 @@ const ProductCard = ({ product, setCartNumber, cart, setCart, lang }) => {
               style={{ height: "200px", padding: "20px 0px 0px 20px" }}
             >
               <h5 class="card-title">{name}</h5>
-              <h6>Calories: {nutritionalFacts.calories}</h6>
-              <h6>Protein: {nutritionalFacts.protein}</h6>
-              <h6>Carbs: {nutritionalFacts.carbs}</h6>
-              <h6>Fat: {nutritionalFacts.fat}</h6>
+              <h6>
+                {t.details.calories}: {nutritionalFacts.calories}
+              </h6>
+              <h6>
+                {t.details.protein}: {nutritionalFacts.protein}
+              </h6>
+              <h6>
+                {t.details.carbs}: {nutritionalFacts.carbs}
+              </h6>
+              <h6>
+                {t.details.fat}: {nutritionalFacts.fat}
+              </h6>
             </div>
           </div>
         </div>

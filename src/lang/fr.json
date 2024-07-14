@@ -40,5 +40,12 @@
     "blog": "Blog"
   },
   "searchResults": "Résultats de recherche...",
-  "addedToCart": "ajouté au panier !"
+  "addedToCart": "ajouté au panier !",
+  "productDetails": "Détails du produit",
+  "details": {
+    "calories": "Calories",
+    "protein": "Protéines",
+    "carbs": "Glucides",
+    "fat": "Matières grasses"
+  }
 }

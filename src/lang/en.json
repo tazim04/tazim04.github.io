@@ -40,5 +40,12 @@
     "blog": "Blog"
   },
   "searchResults": "Search Results...",
-  "addedToCart": "added to Cart!"
+  "addedToCart": "added to Cart!",
+  "productDetails": "Product Details",
+  "details": {
+    "calories": "Calories",
+    "protein": "Protein",
+    "carbs": "Carbs",
+    "fat": "Fat"
+  }
 }
