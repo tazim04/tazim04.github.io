@@ -32,6 +32,7 @@ const SearchResult = ({ cart, setCart, setCartNumber, lang }) => {
                     product={product}
                     cart={cart}
                     setCart={setCart}
+                    lang={lang}
                   />
                 </div>
               ))

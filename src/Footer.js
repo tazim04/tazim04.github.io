@@ -84,7 +84,7 @@ const Footer = ({ lang }) => {
             </li>
             <li class="nav-item mb-2">
               <Link
-                to="/"
+                to="/blog"
                 class="nav-link p-0 text-black"
                 style={{ marginBottom: "20px" }}
               >
