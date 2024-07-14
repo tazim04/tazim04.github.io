@@ -16,15 +16,12 @@ const About = () => {
                 shopping experience to our customers. With a commitment to
                 excellence, our team of staff strive to deliver the best service
                 tailored to meet the needs of each individual. We offer a wide
-                range of products including fresh produce, pantry staples, and
-                household items. Our goal is to provide high-quality products at
-                affordable prices, making grocery shopping convenient and
-                enjoyable. Whether you're looking for everyday essentials or
-                specialty items, TeeKay Groceries is here to serve you with
-                integrity and professionalism. Welcome to TeeKay Groceries,
-                where your grocery needs are our priority. We also offer
-                delivery services to bring your groceries right to your
-                doorstep.
+                range of products including fresh produce and quality meats. Our
+                goal is to provide high-quality products at affordable prices,
+                making grocery shopping convenient and enjoyable. Welcome to
+                TeeKay Groceries, where your grocery needs are our priority. We
+                also offer delivery services to bring your groceries right to
+                your doorstep.
               </p>
             </div>
           </div>
