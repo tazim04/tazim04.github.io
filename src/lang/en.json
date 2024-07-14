@@ -39,5 +39,6 @@
     "about": "About Us",
     "blog": "Blog"
   },
-  "searchResults": "Search Results..."
+  "searchResults": "Search Results...",
+  "addedToCart": "added to Cart!"
 }

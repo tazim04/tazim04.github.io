@@ -1,6 +1,10 @@
+import { Link, useHistory } from "react-router-dom";
+
 const Confirmation = ({ cartNumber, orders }) => {
   const order = orders[orders.length - 1]; // get latest order
   console.log(order);
+
+  const history = useHistory(); // used to redirect to home page
 
   const summary = () => {
     if (order.orderType === "shipping") {
@@ -32,7 +36,7 @@ const Confirmation = ({ cartNumber, orders }) => {
       return (
         <div>
           <h5>Shipping Address:</h5>
-          <h6>{order.form.address}</h6>
+          <h6>{order.form.streetAddress}</h6>
           <h6>{order.form.city}</h6>
           <h6>{order.form.province}</h6>
           <h6>{order.form.postalCode}</h6>
@@ -98,7 +102,10 @@ const Confirmation = ({ cartNumber, orders }) => {
           </thead>
           <tbody>
             {order.cart.map((item, index) => (
-              <tr key={index} style={{ borderBottom: "solid black 1px" }}>
+              <tr
+                key={index}
+                style={{ borderBottom: "solid black 1px", height: "130px" }}
+              >
                 <td style={{ paddingBottom: "20px" }}>
                   <img
                     src={item.image}
@@ -129,6 +136,23 @@ const Confirmation = ({ cartNumber, orders }) => {
         </h5>
         <h5 style={{}}>Estimated Tax: ${order.tax}</h5>
         <h3 style={{}}>Order Total: ${order.totalWithTax}</h3>
+      </div>
+      <div style={{ textAlign: "center" }}>
+        <button
+          style={{
+            background: "#75DA6D",
+            border: "none",
+            height: "70px",
+            width: "260px",
+            borderRadius: "20px",
+            fontWeight: "bold",
+          }}
+          onMouseEnter={(e) => (e.target.style.background = "#5CBF4D")} // change color on hover
+          onMouseLeave={(e) => (e.target.style.background = "#75DA6D")} // change back to original color
+          onClick={() => history.push("/")}
+        >
+          Continue Shopping
+        </button>
       </div>
     </div>
   );

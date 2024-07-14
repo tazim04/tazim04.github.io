@@ -45,7 +45,7 @@ function App() {
         theme="colored"
       />
 
-      <div className="App mx-auto">
+      <div class="App mx-auto">
         <Cart
           show={show}
           setShow={setShow}
