@@ -9,11 +9,11 @@
 
 .modal-content {
   position: absolute;
-  top: -29.8%;
+  top: -25%;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #000000;
-  height: 100%;
+  height: 90%;
 }
 
 .items {

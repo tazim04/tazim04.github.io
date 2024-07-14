@@ -36,57 +36,72 @@ const Cart = ({
           class="proceed"
           style={{ fontWeight: "500", textAlign: "center", paddingTop: "10px" }}
         >
-          <div
-            class="shipToAddress"
-            style={{
-              border: "2px solid black",
-              display: "inline-block",
-              borderRadius: "15px",
-              cursor: "pointer",
-              marginRight: "50px",
-            }}
-            onClick={() => handleRadioClick("shipping")}
-          >
-            <div class="form-check" style={{ padding: "20px 100px 20px 50px" }}>
-              <input
-                class="form-check-input"
-                type="radio"
-                name="shipping"
-                id="shipping"
-                checked={selectedRadio === "shipping"}
-                onChange={() => handleRadioClick}
-              />
-              <label class="form-check-label" for="shipping">
-                Ship to an address
-              </label>
+          <div>
+            <div
+              class="shipToAddress"
+              style={{
+                border: "2px solid black",
+                display: "inline-block",
+                borderRadius: "15px",
+                cursor: "pointer",
+                marginRight: "50px",
+              }}
+              onClick={() => handleRadioClick("shipping")}
+            >
+              <div
+                class="form-check"
+                style={{ padding: "20px 100px 20px 50px" }}
+              >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="shipping"
+                  id="shipping"
+                  checked={selectedRadio === "shipping"}
+                  onChange={() => handleRadioClick}
+                />
+                <label class="form-check-label" for="shipping">
+                  Ship to an address
+                </label>
+              </div>
             </div>
-          </div>
 
-          <div
-            class="pickUp"
-            style={{
-              border: "2px solid black",
-              display: "inline-block",
-              borderRadius: "15px",
-              cursor: "pointer",
-            }}
-            onClick={() => handleRadioClick("pickup")}
-          >
-            <div class="form-check" style={{ padding: "20px 100px 20px 50px" }}>
-              <input
-                class="form-check-input"
-                type="radio"
-                name="pickup"
-                id="pickup"
-                checked={selectedRadio === "pickup"}
-                onChange={() => handleRadioClick}
-              />
-              <label class="form-check-label" for="pickup">
-                Pick up in store
-              </label>
+            <div
+              class="pickUp"
+              style={{
+                border: "2px solid black",
+                display: "inline-block",
+                borderRadius: "15px",
+                cursor: "pointer",
+              }}
+              onClick={() => handleRadioClick("pickup")}
+            >
+              <div
+                class="form-check"
+                style={{ padding: "20px 100px 20px 50px" }}
+              >
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="pickup"
+                  id="pickup"
+                  checked={selectedRadio === "pickup"}
+                  onChange={() => handleRadioClick}
+                />
+                <label class="form-check-label" for="pickup">
+                  Pick up in store
+                </label>
+              </div>
             </div>
           </div>
-          <div class="total">
+          <div
+            class="total"
+            style={{
+              position: "absolute",
+              right: "110px",
+              bottom: "80px",
+            }}
+          >
             <h3>Total: ${calculateTotal()}</h3>
           </div>
           <Link
