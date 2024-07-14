@@ -130,9 +130,9 @@ const ProductCard = ({ product, setCartNumber, cart, setCart, lang }) => {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  position: "relative",
+                  position: "absolute",
                   left: "75%",
-                  bottom: "8%",
+                  bottom: "4%",
                 }}
               >
                 <img
