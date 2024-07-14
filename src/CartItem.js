@@ -63,7 +63,7 @@ const CartItem = ({
       class="card row cart container-fluid"
       style={{
         width: "420%",
-        height: "160px",
+        height: "130px",
         borderBottom: "1px solid black",
         borderTop: "none",
         borderRight: "none",
@@ -75,7 +75,7 @@ const CartItem = ({
           src={image}
           class="card-img-top col"
           alt={name}
-          style={{ maxWidth: "8em", minHeight: "8em", marginRight: "30px" }}
+          style={{ maxWidth: "4em", minHeight: "4em", marginRight: "30px" }}
         />
         <div class="card-title col">
           <h5 style={{}}>{name}</h5>
