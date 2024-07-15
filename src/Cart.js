@@ -36,9 +36,7 @@ const Cart = ({
           class="proceed"
           style={{ fontWeight: "500", textAlign: "center", paddingTop: "10px" }}
         >
-          <div
-            style={{ position: "absolute", bottom: "180px", right: "290px" }}
-          >
+          <div>
             <div
               class="shipToAddress"
               style={{
@@ -96,7 +94,7 @@ const Cart = ({
               </div>
             </div>
           </div>
-          <div class="total" style={{}}>
+          <div class="total" style={{ marginTop: "100px" }}>
             <h3>Total: ${calculateTotal()}</h3>
           </div>
           <Link
