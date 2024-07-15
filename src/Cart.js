@@ -32,11 +32,14 @@ const Cart = ({
   const cartNotEmpty = () => {
     if (cart.length > 0) {
       return (
-        <div
-          class="proceed"
-          style={{ fontWeight: "500", textAlign: "center", paddingTop: "10px" }}
-        >
-          <div>
+        <div class="proceed" style={{ fontWeight: "500", textAlign: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginBottom: "130px",
+            }}
+          >
             <div
               class="shipToAddress"
               style={{
@@ -94,7 +97,7 @@ const Cart = ({
               </div>
             </div>
           </div>
-          <div class="total" style={{ marginTop: "100px" }}>
+          <div class="total">
             <h3>Total: ${calculateTotal()}</h3>
           </div>
           <Link
