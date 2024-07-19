@@ -13,7 +13,11 @@ const OrderCard = ({ order }) => {
       </div>
       <div class="card-body">
         {order.cart.map((item) => (
-          <div class="row" style={{ borderBottom: "solid grey 0.5px" }}>
+          <div
+            key={item.id}
+            class="row"
+            style={{ borderBottom: "solid grey 0.5px" }}
+          >
             <img
               src={item.image}
               class="card-img-top col"
@@ -37,17 +41,6 @@ const OrderCard = ({ order }) => {
         ))}
       </div>
       <div class="card-footer text-body-secondary">
-        <button
-          href="#"
-          class="btn btn-success"
-          style={{
-            height: "30px",
-            display: "inline-flex",
-            alignItems: "center",
-          }}
-        >
-          Order Details
-        </button>
         <span style={{ float: "right" }}>
           <strong>Order Total:</strong> ${order.totalWithTax}
         </span>

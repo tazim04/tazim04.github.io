@@ -39,7 +39,7 @@ const SearchResult = ({ cart, setCart, setCartNumber, lang }) => {
             ) : (
               // if no items are found
               <h5 style={{ textAlign: "center", paddingTop: "50px" }}>
-                No items found!
+                {t.noItemsFound}
               </h5>
             )}
           </div>

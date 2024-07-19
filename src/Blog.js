@@ -23,7 +23,7 @@ const Blog = () => {
                 Check out this article on healthy eating!
               </p>
               <a
-                href="https://www.helpguide.org/articles/healthy-eating/healthy-eating.html"
+                href="https://www.helpguide.org/articles/healthy-eating/healthy-eating.htm"
                 class="btn btn-warning"
                 target="_blank"
               >

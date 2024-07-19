@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { ProgressBar, Step } from "react-step-progress-bar";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const PaymentInfo = ({ form, setForm }) => {
   const [cardNumber, setCardNumber] = useState("");
@@ -35,19 +34,19 @@ const PaymentInfo = ({ form, setForm }) => {
         Enter Payment Information
       </h1>
 
-      <form action="" id="paymentForm">
+      <form action="" id="paymentForm" noValidate>
         <div style={{ margin: "auto", width: "100%" }}>
-          <label htmlFor="PatientName" className="form-label fw-bold">
+          <label htmlFor="cardNumber" class="form-label fw-bold">
             Credit Card
           </label>
-          <div className="input-group mb-3" id="name">
+          <div class="input-group mb-3" id="name">
             <input
               type="text"
               id="cardNumber"
-              className="form-control"
+              class="form-control"
               placeholder="Card Number"
               aria-label="Card Number"
-              aria-describedby="basic-addon1"
+              aria-required="true"
               required
               value={cardNumber}
               onChange={(e) => setCardNumber(e.target.value)}
@@ -55,39 +54,41 @@ const PaymentInfo = ({ form, setForm }) => {
             <input
               type="text"
               id="ccv"
-              className="form-control"
+              class="form-control"
               placeholder="CCV"
               aria-label="CCV"
-              aria-describedby="basic-addon1"
+              aria-required="true"
               required
               value={ccv}
               onChange={(e) => setCcv(e.target.value)}
             />
           </div>
 
-          <label htmlFor="expiryDate" className="form-label fw-bold">
+          <label htmlFor="expiryDate" class="form-label fw-bold">
             Expiration Date
           </label>
           <input
             type="date"
             id="expiryDate"
-            className="form-control mb-3"
+            class="form-control mb-3"
             style={{ height: "20%" }}
+            aria-label="Expiration Date"
+            aria-required="true"
             required
             value={expiryDate}
             onChange={(e) => setExpiryDate(e.target.value)}
           />
 
-          <label htmlFor="emailAddress" className="form-label fw-bold">
+          <label htmlFor="emailAddress" class="form-label fw-bold">
             Email Address
           </label>
           <input
-            type="text"
+            type="email"
             id="emailAddress"
-            className="form-control"
+            class="form-control"
             placeholder="Email Address"
             aria-label="Email Address"
-            aria-describedby="basic-addon1"
+            aria-required="true"
             required
             value={emailAddress}
             onChange={(e) => setEmailAddress(e.target.value)}
@@ -95,7 +96,7 @@ const PaymentInfo = ({ form, setForm }) => {
         </div>
 
         <button
-          className="btn checkout"
+          class="btn checkout"
           style={{
             width: "250px",
             background: "#75DA6D",
