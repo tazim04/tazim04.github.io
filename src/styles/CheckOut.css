@@ -13,3 +13,12 @@
   color: white;
   transform: scale(1.05);
 }
+
+.editInfo {
+  text-decoration: underline;
+  transition: transform 0.2s;
+}
+.editInfo:hover {
+  color: #f04b4b;
+  cursor: pointer;
+}

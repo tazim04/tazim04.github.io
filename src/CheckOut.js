@@ -6,6 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 const CheckOut = ({
   cart,
   form,
+  setForm,
   setCart,
   setCartNumber,
   selectedRadio,
@@ -80,6 +81,7 @@ const CheckOut = ({
 
     setCart([]); // clear cart
     setCartNumber(0); // reset cart number
+    setForm([]); // clear form
 
     history.push("/confirmation"); // redirect to confirmation page
   };
@@ -88,13 +90,22 @@ const CheckOut = ({
     formType = selectedRadio;
     console.log(formType);
 
-    let info = "";
-
     if (formType === "shipping") {
-      info = "Shipping Information:";
       return (
         <div>
-          <h4 style={{ position: "relative", right: "10px" }}>{info}</h4>
+          <div style={{ display: "flex" }}>
+            <h4 style={{ position: "relative", right: "10px" }}>
+              Shipping Information
+            </h4>
+            <p
+              class="my-auto editInfo"
+              onClick={() => {
+                history.push("/shipping");
+              }}
+            >
+              Edit Information
+            </p>
+          </div>
           <p>
             <strong>First Name:</strong> {form.firstName}
           </p>
@@ -116,10 +127,21 @@ const CheckOut = ({
         </div>
       );
     } else {
-      info = "Pickup Information:";
       return (
         <div>
-          <h4 style={{ position: "relative", right: "10px" }}>{info}</h4>
+          <div style={{ display: "flex" }}>
+            <h4 style={{ position: "relative", right: "10px" }}>
+              Pickup Information
+            </h4>
+            <p
+              class="my-auto editInfo"
+              onClick={() => {
+                history.push("/pickup");
+              }}
+            >
+              Edit Information
+            </p>
+          </div>
           <p>
             <strong>First Name:</strong> {form.firstName}
           </p>

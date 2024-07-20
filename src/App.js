@@ -106,6 +106,7 @@ function App() {
             <CheckOut
               cart={cart}
               form={form}
+              setForm={setForm}
               setCart={setCart}
               cartNumber={cartNumber}
               setCartNumber={setCartNumber}

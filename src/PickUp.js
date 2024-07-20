@@ -3,11 +3,11 @@ import { ProgressBar, Step } from "react-step-progress-bar";
 import { Link, useHistory } from "react-router-dom";
 
 const PickUp = ({ form, setForm }) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [location, setLocation] = useState("");
-  const [pickUpDate, setPickUpDate] = useState("");
-  const [pickUpTime, setPickUpTime] = useState("");
+  const [firstName, setFirstName] = useState(form.firstName);
+  const [lastName, setLastName] = useState(form.lastName);
+  const [location, setLocation] = useState(form.location);
+  const [pickUpDate, setPickUpDate] = useState(form.pickUpDate);
+  const [pickUpTime, setPickUpTime] = useState(form.pickUpTime);
 
   const history = useHistory();
 

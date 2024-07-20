@@ -4,12 +4,12 @@ import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
 
 const ShippingInfo = ({ form, setForm }) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [streetAddress, setStreetAddress] = useState("");
-  const [province, setProvince] = useState("");
-  const [city, setCity] = useState("");
-  const [postalCode, setPostalCode] = useState("");
+  const [firstName, setFirstName] = useState(form.firstName);
+  const [lastName, setLastName] = useState(form.lastName);
+  const [streetAddress, setStreetAddress] = useState(form.streetAddress);
+  const [province, setProvince] = useState(form.province);
+  const [city, setCity] = useState(form.city);
+  const [postalCode, setPostalCode] = useState(form.postalCode);
 
   const history = useHistory();
 

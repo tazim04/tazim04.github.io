@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const PaymentInfo = ({ form, setForm }) => {
-  const [cardNumber, setCardNumber] = useState("");
-  const [ccv, setCCV] = useState("");
-  const [expiryDate, setExpiryDate] = useState("");
-  const [emailAddress, setEmailAddress] = useState("");
+  const [cardNumber, setCardNumber] = useState(form.cardNumber);
+  const [ccv, setCCV] = useState(form.ccv);
+  const [expiryDate, setExpiryDate] = useState(form.expiryDate);
+  const [emailAddress, setEmailAddress] = useState(form.emailAddress);
 
   const history = useHistory();
 
@@ -25,6 +25,16 @@ const PaymentInfo = ({ form, setForm }) => {
       history.push("/checkout"); // redirect to checkout page
     } else {
       formElement.classList.add("was-validated"); // show validation feedback
+    }
+  };
+
+  const handleBackClick = (e) => {
+    if (form.streetAddress) {
+      // check if streetAddress exists, implies that the user should be sent back to ShippingInfo
+      history.push("/shipping");
+    } else {
+      // otherwise, send the user back to PickUpInfo
+      history.push("/pickup");
     }
   };
 
@@ -102,7 +112,22 @@ const PaymentInfo = ({ form, setForm }) => {
             background: "#75DA6D",
             fontWeight: "bold",
             position: "relative",
-            left: "41%",
+            left: "25%",
+            top: "40px",
+          }}
+          onClick={handleBackClick}
+        >
+          Back
+        </button>
+
+        <button
+          class="btn checkout"
+          style={{
+            width: "250px",
+            background: "#75DA6D",
+            fontWeight: "bold",
+            position: "relative",
+            left: "28%",
             top: "40px",
           }}
           onClick={handleNextClick}
