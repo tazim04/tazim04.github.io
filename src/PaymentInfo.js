@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 const PaymentInfo = ({ form, setForm }) => {
   const [cardNumber, setCardNumber] = useState("");
-  const [ccv, setCcv] = useState("");
+  const [ccv, setCCV] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
 
@@ -60,7 +60,7 @@ const PaymentInfo = ({ form, setForm }) => {
               aria-required="true"
               required
               value={ccv}
-              onChange={(e) => setCcv(e.target.value)}
+              onChange={(e) => setCCV(e.target.value)}
             />
           </div>
 
