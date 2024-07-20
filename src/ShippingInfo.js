@@ -2,6 +2,8 @@ import React from "react";
 import { ProgressBar, Step } from "react-step-progress-bar";
 import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
+import "react-step-progress-bar/styles.css";
+import "./styles/ProgressBar.css";
 
 const ShippingInfo = ({ form, setForm }) => {
   const [firstName, setFirstName] = useState(form.firstName);
@@ -39,8 +41,67 @@ const ShippingInfo = ({ form, setForm }) => {
         Enter Shipping Information
       </h1>
 
+      <ProgressBar percent={18}>
+        <Step>
+          {({ accomplished }) => (
+            <div
+              className={`step ${accomplished ? "accomplished" : ""}`}
+              style={{
+                width: "40px",
+                height: "40px",
+                textAlign: "center",
+              }}
+            >
+              1
+            </div>
+          )}
+        </Step>
+        <Step>
+          {({ accomplished }) => (
+            <div
+              className={`step ${accomplished ? "accomplished" : ""}`}
+              style={{
+                width: "40px",
+                height: "40px",
+                textAlign: "center",
+              }}
+            >
+              2
+            </div>
+          )}
+        </Step>
+        <Step>
+          {({ accomplished }) => (
+            <div
+              className="step"
+              style={{
+                width: "40px",
+                height: "40px",
+                textAlign: "center",
+              }}
+            >
+              3
+            </div>
+          )}
+        </Step>
+        <Step>
+          {({ accomplished }) => (
+            <div
+              className="step"
+              style={{
+                width: "40px",
+                height: "40px",
+                textAlign: "center",
+              }}
+            >
+              4
+            </div>
+          )}
+        </Step>
+      </ProgressBar>
+
       <form class="needs-validation" action="" id="shippingForm" noValidate>
-        <div style={{ margin: "auto", width: "100%" }}>
+        <div style={{ margin: "auto", width: "100%", paddingTop: "30px" }}>
           <label htmlFor="PatientName" class="form-label fw-bold">
             Name
           </label>

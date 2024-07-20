@@ -2,6 +2,9 @@ import React from "react";
 import CartItem from "./CartItem";
 import "./styles/CheckOut.css";
 import { Link, useHistory } from "react-router-dom";
+import "./styles/ProgressBar.css";
+import "react-step-progress-bar/styles.css";
+import { ProgressBar, Step } from "react-step-progress-bar";
 
 const CheckOut = ({
   cart,
@@ -190,12 +193,77 @@ const CheckOut = ({
       <h1 style={{ padding: "10px 0px 0px 0px ", textAlign: "center" }}>
         Checkout ({cartNumber} items)
       </h1>
+
       <div
         style={{
           paddingLeft: "140px",
           borderTop: "solid black 3px",
         }}
       >
+        <div style={{ paddingTop: "30px" }}>
+          <ProgressBar percent={82.5}>
+            <Step>
+              {({ accomplished }) => (
+                <div
+                  className={`step ${accomplished ? "accomplished" : ""}`}
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    textAlign: "center",
+                  }}
+                >
+                  1
+                </div>
+              )}
+            </Step>
+            <Step>
+              {({ accomplished }) => (
+                <div
+                  className={`step ${accomplished ? "accomplished" : ""}`}
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    textAlign: "center",
+                  }}
+                >
+                  2
+                </div>
+              )}
+            </Step>
+            <Step>
+              {({ accomplished }) => (
+                <div
+                  className="step"
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    textAlign: "center",
+                    backgroundColor: "#75da6d",
+                    borderColor: "#75da6d",
+                    color: "white", // hard coded for this step
+                  }}
+                >
+                  3
+                </div>
+              )}
+            </Step>
+            <Step>
+              {({ accomplished }) => (
+                <div
+                  className="step"
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    textAlign: "center",
+                  }}
+                >
+                  4
+                </div>
+              )}
+            </Step>
+          </ProgressBar>
+        </div>
+
         <div
           style={{
             paddingLeft: "20px",

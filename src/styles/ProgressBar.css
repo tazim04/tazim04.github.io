@@ -1,0 +1,36 @@
+.step {
+  color: rgb(190, 190, 190);
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(206, 206, 206);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.step.accomplished {
+  background-color: #75da6d;
+  color: white;
+  border-style: none;
+}
+.RSPBprogressBar .RSPBprogression {
+  /* This is the progress bar itself */
+  position: absolute;
+  transition: width 0.3s ease;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background: #75da6d;
+  z-index: -1;
+}
+.RSPBprogressBar {
+  width: 60%;
+  margin: auto;
+}

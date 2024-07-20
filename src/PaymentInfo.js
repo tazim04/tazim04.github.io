@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import "./styles/ProgressBar.css";
+import "react-step-progress-bar/styles.css";
+import { ProgressBar, Step } from "react-step-progress-bar";
 
 const PaymentInfo = ({ form, setForm }) => {
   const [cardNumber, setCardNumber] = useState(form.cardNumber);
@@ -44,8 +47,67 @@ const PaymentInfo = ({ form, setForm }) => {
         Enter Payment Information
       </h1>
 
+      <ProgressBar percent={50}>
+        <Step>
+          {({ accomplished }) => (
+            <div
+              className={`step ${accomplished ? "accomplished" : ""}`}
+              style={{
+                width: "40px",
+                height: "40px",
+                textAlign: "center",
+              }}
+            >
+              1
+            </div>
+          )}
+        </Step>
+        <Step>
+          {({ accomplished }) => (
+            <div
+              className={`step ${accomplished ? "accomplished" : ""}`}
+              style={{
+                width: "40px",
+                height: "40px",
+                textAlign: "center",
+              }}
+            >
+              2
+            </div>
+          )}
+        </Step>
+        <Step>
+          {({ accomplished }) => (
+            <div
+              className="step"
+              style={{
+                width: "40px",
+                height: "40px",
+                textAlign: "center",
+              }}
+            >
+              3
+            </div>
+          )}
+        </Step>
+        <Step>
+          {({ accomplished }) => (
+            <div
+              className="step"
+              style={{
+                width: "40px",
+                height: "40px",
+                textAlign: "center",
+              }}
+            >
+              4
+            </div>
+          )}
+        </Step>
+      </ProgressBar>
+
       <form action="" id="paymentForm" noValidate>
-        <div style={{ margin: "auto", width: "100%" }}>
+        <div style={{ margin: "auto", width: "100%", paddingTop: "30px" }}>
           <label htmlFor="cardNumber" class="form-label fw-bold">
             Credit Card
           </label>

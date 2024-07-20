@@ -1,4 +1,7 @@
 import { Link, useHistory } from "react-router-dom";
+import "./styles/ProgressBar.css";
+import "react-step-progress-bar/styles.css";
+import { ProgressBar, Step } from "react-step-progress-bar";
 
 const Confirmation = ({ cartNumber, orders }) => {
   const order = orders[orders.length - 1]; // get latest order
@@ -58,6 +61,72 @@ const Confirmation = ({ cartNumber, orders }) => {
       <h1 style={{ textAlign: "center", paddingBottom: "20px" }}>
         Thanks for shopping with us!
       </h1>
+
+      <ProgressBar percent={100}>
+        <Step>
+          {({ accomplished }) => (
+            <div
+              className={`step ${accomplished ? "accomplished" : ""}`}
+              style={{
+                width: "40px",
+                height: "40px",
+                textAlign: "center",
+              }}
+            >
+              1
+            </div>
+          )}
+        </Step>
+        <Step>
+          {({ accomplished }) => (
+            <div
+              className={`step ${accomplished ? "accomplished" : ""}`}
+              style={{
+                width: "40px",
+                height: "40px",
+                textAlign: "center",
+              }}
+            >
+              2
+            </div>
+          )}
+        </Step>
+        <Step>
+          {({ accomplished }) => (
+            <div
+              className="step"
+              style={{
+                width: "40px",
+                height: "40px",
+                textAlign: "center",
+                backgroundColor: "#75da6d",
+                borderColor: "#75da6d",
+                color: "white", // hard coded for this step
+              }}
+            >
+              3
+            </div>
+          )}
+        </Step>
+        <Step>
+          {({ accomplished }) => (
+            <div
+              className="step"
+              style={{
+                width: "40px",
+                height: "40px",
+                textAlign: "center",
+                backgroundColor: "#75da6d",
+                borderColor: "#75da6d",
+                color: "white", // hard coded for this step
+              }}
+            >
+              4
+            </div>
+          )}
+        </Step>
+      </ProgressBar>
+
       <div style={{ paddingBottom: "40px" }}>
         <div
           style={{ display: "inilne-block", borderBottom: "black solid 1px" }}
