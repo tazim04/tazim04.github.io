@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/teekay-groceries/static/css/main.64af2adb.css",
-    "main.js": "/teekay-groceries/static/js/main.cd689f30.js",
+    "main.css": "/teekay-groceries/static/css/main.9086c39f.css",
+    "main.js": "/teekay-groceries/static/js/main.cde82c92.js",
     "static/media/steak.png": "/teekay-groceries/static/media/steak.2556e8b7b79d678493d0.png",
     "static/media/salmon.png": "/teekay-groceries/static/media/salmon.8f9e7191ed666d440ac4.png",
     "static/media/banana.png": "/teekay-groceries/static/media/banana.f5eba01efed4cb8faf3f.png",
@@ -21,11 +21,11 @@
     "static/media/profile.png": "/teekay-groceries/static/media/profile.b11f45a152bb037786cd.png",
     "static/media/add_to_cart.png": "/teekay-groceries/static/media/add_to_cart.bff8e165b501d8148c0e.png",
     "index.html": "/teekay-groceries/index.html",
-    "main.64af2adb.css.map": "/teekay-groceries/static/css/main.64af2adb.css.map",
-    "main.cd689f30.js.map": "/teekay-groceries/static/js/main.cd689f30.js.map"
+    "main.9086c39f.css.map": "/teekay-groceries/static/css/main.9086c39f.css.map",
+    "main.cde82c92.js.map": "/teekay-groceries/static/js/main.cde82c92.js.map"
   },
   "entrypoints": [
-    "static/css/main.64af2adb.css",
-    "static/js/main.cd689f30.js"
+    "static/css/main.9086c39f.css",
+    "static/js/main.cde82c92.js"
   ]
 }
