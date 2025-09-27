@@ -8,6 +8,7 @@ type ProjectProps = {
     technologies: string[];
     thumbnail: string;
     link: string;
+    source?: string;
   };
 };
 
@@ -19,12 +20,12 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
         href={project.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative flex-shrink-0 w-full md:w-1/3 group"
+        className="relative flex-shrink-0 w-full my-auto md:w-1/3 group"
       >
         <img
           src={project.thumbnail}
           alt={`${project.title} thumbnail`}
-          className="w-full max-h-52 object-cover rounded-lg transition-all opacity-100 group-hover:opacity-70 group-hover:-translate-y-1 ease-in-out"
+          className="w-full max-h- object-cover rounded-lg transition-all opacity-100 group-hover:opacity-70 group-hover:-translate-y-1 ease-in-out"
         />
         {/* Icon */}
         <div className="absolute top-2 right-2 rounded-full p-2 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all ease-in-out">
@@ -35,8 +36,18 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
       {/* Project Details */}
       <div className="flex flex-col justify-between md:w-2/3">
         {/* Project Title */}
-        <div className="mb-4">
+        <div className="mb-4 flex items-center justify-between">
           <h2 className="text-2xl font-bold text-rose-500">{project.title}</h2>
+          {project.source && (
+            <a
+              href={project.source}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-400 hover:underline"
+            >
+              View Source
+            </a>
+          )}
         </div>
 
         {/* Description */}

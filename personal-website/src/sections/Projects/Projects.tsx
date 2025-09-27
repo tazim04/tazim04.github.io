@@ -3,12 +3,43 @@ import Project from "./Project";
 const Projects = () => {
   const projects = [
     {
+      title: "TalentSync",
+      description:
+        "Built a Chrome extension that uses Llama 3 to score resumes against job listings, enhancing job search. Designed a serverless architecture with AWS Lambda, S3, and API Gateway for scalable scraping and matching via Playwright and Groq, securing endpoints with Google OAuth and Cognito.",
+      technologies: [
+        "React",
+        "TypeScript",
+        "Python",
+        "Groq (Llama 3)",
+        "AWS (Lambda, S3, ECR, Cognito)",
+      ],
+      thumbnail: "./projects/talentSync.jpeg",
+      link: "https://chromewebstore.google.com/detail/talentsync/odkpmfccegfdcekejlolmopnlhnpfebm",
+      source: "https://github.com/tazim04/Talent-Sync",
+    },
+    {
       title: "TeeChat",
       description:
-        "Built a real-time chatting application using WebSockets (Socket.io) that facilitates instant messaging between multiple clients. Securely stored passwords using one-way hashing and implemented JWT tokens for authorization.",
-      technologies: ["React", "Express.js", "Socket.io", "MongoDB", "AWS EC2"],
+        "Developed a real-time chat application with 25 monthly active users, enabling seamless instant messaging. Used MongoDB and Socket.IO for real-time data management, securing passwords with one-way hashing, and implemented a complete JWT flow for secure sessions.",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "Socket.IO",
+        "MongoDB",
+        "AWS EC2",
+      ],
       thumbnail: "./projects/TeeChat.jpg",
       link: "https://www.teechat.chat/",
+    },
+    {
+      title: "SESA Website",
+      description:
+        "Leading a team of developers to build and maintain the Software Engineering Student Association (SESA) website with Next.js and TypeScript. Implemented backend services for a resources page centralizing 200+ academic resources and developed reusable components aligned with Figma designs.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase (PostgreSQL)", "Drizzle ORM"],
+      thumbnail: "./projects/sesa.png",
+      link: "https://sesa-aegl.ca",
+      source: "https://github.com/uOttawaSESA/sesa-website",
     },
     {
       title: "UOHFS Website",
@@ -21,7 +52,7 @@ const Projects = () => {
     {
       title: "StudySync",
       description:
-        "Collaborated in a team of 5 to develop a Team Management System's Team Creation Sub-System. Built secure backend infrastructure with Spring Boot and connected responsive Angular UI with robust APIs.",
+        "Collaborated in a team of 5 to develop a School Team Creation System with Spring Boot and Angular. Designed and implemented backend using Spring Boot with secure JPAs, DAOs, and REST APIs, and led schema design with PostgreSQL for robust persistence.",
       technologies: ["Angular", "Spring Boot (Kotlin)", "PostgreSQL", "Docker"],
       thumbnail: "./projects/studySync.png",
       link: "https://github.com/tazim04/studysync",
@@ -33,6 +64,7 @@ const Projects = () => {
       technologies: ["C# (.NET)", "Raspberry Pi (Linux)"],
       thumbnail: "./projects/talkBox.jpeg",
       link: "https://www.linkedin.com/posts/tazim-khan_im-happy-to-share-this-talk-and-music-box-activity-7136521162288689152-5lyW?utm_source=share&utm_medium=member_desktop",
+      source: "https://github.com/tazim04/TalkBox",
     },
   ];
 
