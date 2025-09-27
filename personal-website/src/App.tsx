@@ -93,7 +93,7 @@ function App() {
             />
           </h1>
           <p className="text-gray-300 text-sm md:text-base">
-            I'm a 3rd-year Software Engineering student at the{" "}
+            I'm a 4th-year Software Engineering student at the{" "}
             <span className="text-rose-500">University of Ottawa</span>.
           </p>
           <div className="flex flex-row flex-wrap gap-4 mt-10">
