@@ -100,7 +100,7 @@ function App() {
             <Button
               className="resume text-center px-4 py-2 md:py-4 w-36 md:w-44 bg-rose-600 rounded-sm transition-all ease-in-out hover:rounded-[1.5rem] active:translate-y-1"
               as="a"
-              href="/personal-website/TazimKhan_Resume.pdf"
+              href="/TazimKhan_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
