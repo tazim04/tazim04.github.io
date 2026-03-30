@@ -6,7 +6,7 @@ type ProjectProps = {
     title: string;
     description: string;
     technologies: string[];
-    thumbnail: string;
+    thumbnail?: string;
     link: string;
     source?: string;
   };
@@ -22,11 +22,19 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
         rel="noopener noreferrer"
         className="relative flex-shrink-0 w-full my-auto md:w-1/3 group"
       >
-        <img
-          src={project.thumbnail}
-          alt={`${project.title} thumbnail`}
-          className="w-full max-h- object-cover rounded-lg transition-all opacity-100 group-hover:opacity-70 group-hover:-translate-y-1 ease-in-out"
-        />
+        {project.thumbnail ? (
+          <img
+            src={project.thumbnail}
+            alt={`${project.title} thumbnail`}
+            className="w-full max-h- object-cover rounded-lg transition-all opacity-100 group-hover:opacity-70 group-hover:-translate-y-1 ease-in-out"
+          />
+        ) : (
+          <div className="min-h-52 rounded-lg bg-gradient-to-br from-rose-500/20 via-gray-800 to-cyan-400/20 border border-gray-700 flex items-end p-5 transition-all group-hover:-translate-y-1 ease-in-out">
+            <span className="text-xl font-bold text-white leading-tight">
+              {project.title}
+            </span>
+          </div>
+        )}
         {/* Icon */}
         <div className="absolute top-2 right-2 rounded-full p-2 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all ease-in-out">
           <OpenInNewIcon className="text-gray-200 text-lg" />

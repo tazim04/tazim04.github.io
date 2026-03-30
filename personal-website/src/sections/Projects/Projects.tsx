@@ -3,6 +3,21 @@ import Project from "./Project";
 const Projects = () => {
   const projects = [
     {
+      title: "Ottawa CrimeLens",
+      description:
+        "A full-stack distributed system designed to analyze Ottawa crime data across spatial grids and surface anomalous activity patterns. Consists of many microservices for data ingestion, processing, and anomaly detection, utilizing AWS services for scalability and reliability.",
+      technologies: [
+        "Spring Boot (Java)",
+        "Python (Scklearn, Pandas)",
+        "React",
+        "TypeScript",
+        "AWS (ECS, S3, Step Functions, EventBridge)"
+      ],
+      thumbnail: "./projects/ottawaCrimeLens.png",
+      link: "https://www.ottawacrimelens.ca/",
+      source: "https://github.com/tazim04/Ottawa-Crime-Lens",
+    },
+    {
       title: "TalentSync",
       description:
         "Built a Chrome extension that uses Llama 3 to score resumes against job listings, enhancing job search. Designed a serverless architecture with AWS Lambda, S3, and API Gateway for scalable scraping and matching via Playwright and Groq, securing endpoints with Google OAuth and Cognito.",
