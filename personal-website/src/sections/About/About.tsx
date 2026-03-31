@@ -12,52 +12,55 @@ const About = () => {
       <div className="bg-gray-300 bg-opacity-5 rounded-lg md:p-7 p-5 grid md:grid-cols-4 grid-cols-1 md:gap-x-8 gap-y-8 md:gap-y-0">
         <div className="md:border-r border-r-0 md:border-b-0 border-b pb-6 border-gray-500 md:pe-6 pe-0 col-span-3">
           <p className="md:text-base text-sm leading-relaxed">
-            Hi, My name is Tazim Khan! I'm an aspiring Software Engineeer
-            studying Software Engineering at the{" "}
+            Hi, my name is Tazim Khan! I'm a Software Engineering student at
+            the{" "}
             <span className="text-rose-500 font-bold">
               University of Ottawa
             </span>
-            . I am highly driven, ambitious, and passionate about learning and
-            problem-solving. With hands-on experience as a Full-Stack Developer
-            at the{" "}
+            , with a strong focus on backend development, systems architecture,
+            and building reliable software. Through internships at the{" "}
             <span className="text-rose-500 font-bold">
               Canada Revenue Agency
             </span>
-            , and a strong foundation in software development through personal
-            projects, I excel in creating innovative solutions and collaborating
-            within dynamic teams.
+            {" "}and{" "}
+            <span className="text-rose-500 font-bold">
+              Natural Resources Canada
+            </span>
+            , I've worked on production systems and learned how to design
+            scalable solutions within collaborative teams.
             <br />
             <br />
-            Through academic, personal, and professional experiences, I have
-            honed my technical expertise, teamwork, and communication skills. I
-            enjoy bringing ideas to life through personal and team-driven
-            projects and am always eager to embrace new challenges that push my
-            limits.
+            Beyond internships, I've also supported student communities through
+            freelance-style work, serving as the{" "}
+            <span className="text-rose-500 font-bold">Development Team Lead</span> for the
+            uOttawa Software Engineering Student Association
+            and{" "}
+            <span className="text-rose-500 font-bold">Lead Developer</span> for
+            the University of Ottawa's Health and Fitness Society. Across
+            professional, academic, and club projects, I enjoy turning ideas
+            into well-structured systems and taking on challenges that help me
+            grow as an engineer.
             <br />
             <br />
             <div className="mb-3">My technical experties:</div>
             <ul className="list-disc list-inside grid grid-cols-1 gap-y-1 marker:text-rose-500 text-indent">
               <li>
+                <span className="font-bold">Backend:</span> Spring Boot, Flask, FastAPI, Node.js, Express.js
+              </li>
+              <li>
                 <span className="font-bold">Frontend:</span> React, Angular,
                 Next.js
               </li>
               <li>
-                <span className="font-bold">Backend:</span> Node.js, Express.js,
-                Spring Boot, WebSockets (Socket.io)
-              </li>
-              <li>
                 <span className="font-bold">Languages:</span>{" "}
-                JavaScript/TypeScript, Java, Kotlin, Python, C#
+                Java, Kotlin, Python, JavaScript/TypeScript, C, C++, C#
               </li>
               <li>
                 <span className="font-bold">Databases:</span> MySQL, PostgreSQL,
                 MongoDB, Firebase
               </li>
               <li>
-                <span className="font-bold">Tools:</span> Docker, Git, AWS EC2
-              </li>
-              <li>
-                <span className="font-bold">QA:</span> JUnit, Cypress
+                <span className="font-bold">Tools:</span> Git, GitHub, GitLab, Docker, AWS, GCP, Postman
               </li>
             </ul>
           </p>
